@@ -15,12 +15,14 @@ script = ExtResource("1_djs60")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -9)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_e71d2")
 hframes = 16
 vframes = 3
 
 [node name="HitBox" parent="." instance=ExtResource("2_akllp")]
 position = Vector2(0, -9)
+scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, 1.5)
@@ -29,6 +31,7 @@ debug_color = Color(0.77, 0.590333, 0, 0.419608)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, -9)
+scale = Vector2(0.5, 0.5)
 collision_layer = 16
 collision_mask = 0
 

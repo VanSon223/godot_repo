@@ -8,4 +8,4 @@ class_name DropData extends Resource
 func get_drop_count() -> int:
 	if randf_range(0, 100) >= probability:
 		return 0
-	return randf_range(min_amount, max_amount)
+	return int(randf_range(min_amount, max_amount))

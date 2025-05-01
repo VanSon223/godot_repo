@@ -23,8 +23,6 @@ func _ready() -> void:
 	update_hp(99)
 	pass
 func _process(_delta: float) -> void:
-	#direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
-	#direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
 	direction = Vector2(
 		Input.get_axis("left","right"),
 		Input.get_axis("up","down")
@@ -44,7 +42,6 @@ func  SetDirection() -> bool :
 		
 	var direction_id : int = int (round((direction + cardinal_direction * 0.1).angle() / TAU * DIR_4.size()))
 	var new_dir =  DIR_4[direction_id]
-		
 	if new_dir == cardinal_direction:
 		return false
 	cardinal_direction = new_dir

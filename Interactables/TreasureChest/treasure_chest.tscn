@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cxakfxmuyw1ls" path="res://Interactables/TreasureChest/treasure-chest.png" id="2_km1n8"]
 [ext_resource type="Texture2D" uid="uid://cw8s2neo2l3pl" path="res://Items/sprite/items.png" id="3_dhxp7"]
 [ext_resource type="AudioStream" uid="uid://bbi6ggrxyka2n" path="res://Interactables/TreasureChest/treasure-open.wav" id="4_km1n8"]
-[ext_resource type="PackedScene" uid="uid://2o4ift7dsair" path="res://GeneralNodes/PresistentDataHandler/presistent_data_handler.tscn" id="5_dhxp7"]
+[ext_resource type="PackedScene" uid="uid://2o4ift7dsair" path="res://GeneralNodes/PersistentDataHandler/persistent_data_handler.tscn" id="5_dhxp7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nceft"]
 atlas = ExtResource("3_dhxp7")

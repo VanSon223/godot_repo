@@ -1,12 +1,13 @@
-[gd_scene load_steps=37 format=4 uid="uid://ltwglm8k1jiq"]
+[gd_scene load_steps=36 format=4 uid="uid://ltwglm8k1jiq"]
 
 [ext_resource type="Script" uid="uid://buvtubdr85txo" path="res://Levels/scripts/level.gd" id="1_s823n"]
+[ext_resource type="AudioStream" uid="uid://cywoc01vhpsg5" path="res://Levels/music/example_music_03.ogg" id="2_7wgl6"]
 [ext_resource type="PackedScene" uid="uid://dbq5jxaq8oxct" path="res://Tile Maps/dungeon_tiles_01.tscn" id="2_my8dt"]
 [ext_resource type="Texture2D" uid="uid://dlq8ghisf6blr" path="res://Tile Maps/Sprites/dungeon.png" id="3_4nqfk"]
 [ext_resource type="PackedScene" uid="uid://cssah7wp05hn5" path="res://Levels/player_spawn.tscn" id="3_o0q0c"]
 [ext_resource type="PackedScene" uid="uid://c3j12afcnlcge" path="res://Levels/level_transition.tscn" id="4_6uors"]
 [ext_resource type="PackedScene" uid="uid://cpfcvndbajgx7" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="8_jbksl"]
-[ext_resource type="PackedScene" uid="uid://dmdp2fi7bbquq" path="res://GeneralNodes/HitBox/hit_box.tscn" id="9_fajar"]
+[ext_resource type="PackedScene" uid="uid://dmdp2fi7bbquq" path="res://GeneralNodes/Hitbox/hit_box.tscn" id="9_fajar"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8q12o"]
 texture = ExtResource("3_4nqfk")
@@ -948,14 +949,9 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
 
-[sub_resource type="Resource" id="Resource_7wgl6"]
-metadata/__load_path__ = "res://Items/magical_flute.tres"
-
-[sub_resource type="Resource" id="Resource_t4e1e"]
-metadata/__load_path__ = "res://quests/recover_lost_flute.tres"
-
 [node name="04" type="Node2D"]
 script = ExtResource("1_s823n")
+music = ExtResource("2_7wgl6")
 
 [node name="Dungeon Tiles 01" parent="." instance=ExtResource("2_my8dt")]
 tile_map_data = PackedByteArray("AAAAAAAAAQAJAAAAAAAAAAEAAQAJAAEAAAAAAAIAAQAJAAIAAAAAAAMAAQAJAAMAAAAAAAQAAQAJAAMAAAAAAAUAAQAJAAMAAAAAAAYAAQAJAAMAAAAAAAcAAQAJAAMAAAAAAAgAAQAJAAMAAAAAAAkAAQAJAAQAAAAAAAoAAQAJAAUAAAAAAAsAAQAJAAYAAAABAAAAAQAKAAAAAAABAAEAAQAKAAEAAAABAAIAAQAKAAIAAAABAAMAAQAKAAMAAAABAAQAAQAKAAMAAAABAAUAAQAKAAMAAAABAAYAAQAKAAMAAAABAAcAAQAKAAMAAAABAAgAAQAKAAMAAAABAAkAAQAKAAQAAAABAAoAAQAKAAUAAAABAAsAAQAKAAYAAAACAAAAAQALAAAAAAACAAEAAQALAAEAAAACAAIAAQALAAIAAAACAAMAAQALAAMAAAACAAQAAQALAAMAAAACAAUAAQALAAMAAAACAAYAAQALAAMAAAACAAcAAQALAAMAAAACAAgAAQALAAMAAAACAAkAAQALAAQAAAACAAoAAQALAAUAAAACAAsAAQALAAYAAAADAAAAAQAMAAAAAAADAAEAAQAMAAEAAAADAAIAAQAMAAIAAAADAAMAAQABAAIAAAADAAQAAQAAAAIAAAADAAUAAQAAAAIAAAADAAYAAQACAAAAAAADAAcAAQADAAAAAAADAAgAAQABAAQAAAADAAkAAQAMAAQAAAADAAoAAQAMAAUAAAADAAsAAQAMAAYAAAAEAAAAAQAEAAUAAAAEAAEAAQAEAAYAAAAEAAIAAQAEAAcAAAAEAAMAAQABAAAAAAAEAAQAAQABAAEAAAAEAAUAAQAAAAAAAAAEAAYAAQABAAAAAAAEAAcAAQAAAAEAAAAEAAgAAQADAAEAAAAEAAkAAQAAAAUAAAAEAAoAAQAAAAYAAAAEAAsAAQAAAAcAAAAFAAAAAQAHAAUAAAAFAAEAAQAHAAYAAAAFAAIAAQAHAAcAAAAFAAMAAQAAAAEAAAAFAAQAAQADAAAAAAAFAAUAAQADAAAAAAAFAAYAAQABAAAAAAAFAAcAAQADAAAAAAAFAAgAAQAAAAEAAAAFAAkAAQADAAUAAAAFAAoAAQADAAYAAAAFAAsAAQADAAcAAAAGAAAAAQAMAAAAAAAGAAEAAQAMAAEAAAAGAAIAAQAMAAIAAAAGAAMAAQAAAAEAAAAGAAQAAQABAAEAAAAGAAUAAQACAAIAAAAGAAYAAQAAAAAAAAAGAAcAAQACAAIAAAAGAAgAAQACAAEAAAAGAAkAAQAAAAUAAAAGAAoAAQAAAAYAAAAGAAsAAQAAAAcAAAAHAAAAAQAMAAAAAAAHAAEAAQAMAAEAAAAHAAIAAQAMAAIAAAAHAAMAAQAAAAEAAAAHAAQAAQADAAIAAAAHAAUAAQABAAIAAAAHAAYAAQADAAAAAAAHAAcAAQADAAAAAAAHAAgAAQABAAQAAAAHAAkAAQABAAUAAAAHAAoAAQABAAYAAAAHAAsAAQABAAcAAAAIAAAAAQAMAAAAAAAIAAEAAQAMAAEAAAAIAAIAAQAMAAIAAAAIAAMAAQABAAAAAAAIAAQAAQABAAAAAAAIAAUAAQADAAIAAAAIAAYAAQAAAAEAAAAIAAcAAQABAAIAAAAIAAgAAQAAAAEAAAAIAAkAAQACAAUAAAAIAAoAAQACAAYAAAAIAAsAAQACAAcAAAAJAAAAAQAMAAAAAAAJAAEAAQAMAAEAAAAJAAIAAQAMAAIAAAAJAAMAAQAAAAMAAAAJAAQAAQABAAAAAAAJAAUAAQADAAEAAAAJAAYAAQACAAAAAAAJAAcAAQAAAAIAAAAJAAgAAQADAAEAAAAJAAkAAQADAAUAAAAJAAoAAQADAAYAAAAJAAsAAQADAAcAAAAKAAAAAQAEAAUAAAAKAAEAAQAEAAYAAAAKAAIAAQAEAAcAAAAKAAMAAQABAAAAAAAKAAQAAQADAAAAAAAKAAUAAQADAAEAAAAKAAYAAQACAAAAAAAKAAcAAQADAAIAAAAKAAgAAQACAAEAAAAKAAkAAQAAAAUAAAAKAAoAAQAAAAYAAAAKAAsAAQAAAAcAAAALAAAAAQAHAAUAAAALAAEAAQAHAAYAAAALAAIAAQAHAAcAAAALAAMAAQADAAIAAAALAAQAAQADAAIAAAALAAUAAQADAAAAAAALAAYAAQADAAIAAAALAAcAAQABAAAAAAALAAgAAQACAAIAAAALAAkAAQADAAUAAAALAAoAAQADAAYAAAALAAsAAQADAAcAAAAMAAAAAQAMAAAAAAAMAAEAAQAMAAEAAAAMAAIAAQAMAAIAAAAMAAMAAQADAAAAAAAMAAQAAQADAAIAAAAMAAUAAQABAAAAAAAMAAYAAQADAAEAAAAMAAcAAQACAAAAAAAMAAgAAQADAAAAAAAMAAkAAQAMAAQAAAAMAAoAAQAMAAUAAAAMAAsAAQAMAAYAAAANAAAAAQANAAAAAAANAAEAAQANAAEAAAANAAIAAQANAAIAAAANAAMAAQANAAMAAAANAAQAAQANAAMAAAANAAUAAQANAAMAAAANAAYAAQANAAMAAAANAAcAAQANAAMAAAANAAgAAQANAAMAAAANAAkAAQANAAQAAAANAAoAAQANAAUAAAANAAsAAQANAAYAAAAOAAAAAQAOAAAAAAAOAAEAAQAOAAEAAAAOAAIAAQAOAAIAAAAOAAMAAQAOAAMAAAAOAAQAAQAOAAMAAAAOAAUAAQAOAAMAAAAOAAYAAQAOAAMAAAAOAAcAAQAOAAMAAAAOAAgAAQAOAAMAAAAOAAkAAQAOAAQAAAAOAAoAAQAOAAUAAAAOAAsAAQAOAAYAAAAPAAAAAQAPAAAAAAAPAAEAAQAPAAEAAAAPAAIAAQAPAAIAAAAPAAMAAQAPAAMAAAAPAAQAAQAPAAMAAAAPAAUAAQAPAAMAAAAPAAYAAQAPAAMAAAAPAAcAAQAPAAMAAAAPAAgAAQAPAAMAAAAPAAkAAQAPAAQAAAAPAAoAAQAPAAUAAAAPAAsAAQAPAAYAAAA=")
@@ -975,58 +971,6 @@ level = "res://Levels/Dungeon01/02.tscn"
 target_transition_area = "LevelTransition3"
 side = 3
 
-[node name="TorchDungeon" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(112, 102)
-script = null
-
-[node name="TorchDungeon2" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(402, 102)
-script = null
-
-[node name="TorchDungeon3" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(402, 280)
-script = null
-
-[node name="TorchDungeon4" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(112, 280)
-script = null
-
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(0.306, 0.36, 0.324, 1)
 energy = 0.8
@@ -1034,18 +978,6 @@ blend_mode = 2
 
 [node name="DarkWizardBoss" type="Node2D" parent="."]
 y_sort_enabled = true
-
-[node name="PersistentDataHandler" parent="DarkWizardBoss"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-script = null
 
 [node name="BossNode" type="Node2D" parent="DarkWizardBoss"]
 position = Vector2(257, 191)
@@ -1134,87 +1066,6 @@ autoplay = "default"
 
 [node name="BeamAttacks" type="Node2D" parent="DarkWizardBoss"]
 
-[node name="EB_H1" parent="DarkWizardBoss/BeamAttacks"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(257, 116)
-script = null
-
-[node name="EB_H2" parent="DarkWizardBoss/BeamAttacks"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(257, 191)
-script = null
-
-[node name="EB_H3" parent="DarkWizardBoss/BeamAttacks"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(257, 262)
-script = null
-
-[node name="EB_V1" parent="DarkWizardBoss/BeamAttacks"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(157, 191)
-rotation = 1.5708
-script = null
-
-[node name="EB_V2" parent="DarkWizardBoss/BeamAttacks"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(257, 191)
-rotation = 1.5708
-script = null
-
-[node name="EB_V3" parent="DarkWizardBoss/BeamAttacks"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(357, 191)
-rotation = 1.5708
-script = null
-
 [node name="PositionTargets" type="Node2D" parent="DarkWizardBoss"]
 
 [node name="Sprite2D" type="Sprite2D" parent="DarkWizardBoss/PositionTargets"]
@@ -1232,37 +1083,3 @@ texture = SubResource("GradientTexture2D_si5al")
 [node name="Sprite2D3" type="Sprite2D" parent="DarkWizardBoss/PositionTargets"]
 position = Vector2(115, 192)
 texture = SubResource("GradientTexture2D_si5al")
-
-[node name="ItemDropper" parent="DarkWizardBoss"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(314, 192)
-item_data = SubResource("Resource_7wgl6")
-script = null
-
-[node name="QuestAdvanceTrigger" parent="DarkWizardBoss/ItemDropper"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(-314, -192)
-signal_name = "drop_collected"
-linked_quest = SubResource("Resource_t4e1e")
-quest_step = 2
-settings_summary = "UPDATE QUEST:
-Quest: Recover Lost Magical Flute
-Step: 2 - find the magical flute
-Complete: false"
-script = null

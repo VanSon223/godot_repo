@@ -1,19 +1,21 @@
-[gd_scene load_steps=38 format=3 uid="uid://bb8nr7p6mt056"]
+[gd_scene load_steps=41 format=3 uid="uid://bb8nr7p6mt056"]
 
 [ext_resource type="Script" uid="uid://mwyltyeldm4" path="res://Player/Scripts/player.gd" id="1_k53q1"]
-[ext_resource type="Script" uid="uid://cgjo1gul0t47a" path="res://Player/Scripts/player_state_machine.gd" id="2_4ntmi"]
+[ext_resource type="Script" uid="uid://cgjo1gul0t47a" path="res://Player/Scripts/state/player_state_machine.gd" id="2_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://coudtyx6o3u04" path="res://Player/Sprites/Player.png" id="2_k53q1"]
-[ext_resource type="Script" uid="uid://bi8udtm2tcft3" path="res://Player/Scripts/state_idle.gd" id="3_btcbx"]
-[ext_resource type="Script" uid="uid://njliyctmv0ox" path="res://Player/Scripts/state_walk.gd" id="4_gwnis"]
-[ext_resource type="Script" uid="uid://72wjb7yc30i4" path="res://Player/Scripts/state_attack.gd" id="6_fhl08"]
+[ext_resource type="Script" uid="uid://bi8udtm2tcft3" path="res://Player/Scripts/state/state_idle.gd" id="3_btcbx"]
+[ext_resource type="Script" uid="uid://njliyctmv0ox" path="res://Player/Scripts/state/state_walk.gd" id="4_gwnis"]
+[ext_resource type="Script" uid="uid://72wjb7yc30i4" path="res://Player/Scripts/state/state_attack.gd" id="6_fhl08"]
 [ext_resource type="AudioStream" uid="uid://15dhy2s8xy1a" path="res://Player/Audio/SwordSwoosh.wav" id="7_vtle1"]
 [ext_resource type="Script" uid="uid://eknh08yn65br" path="res://Player/Scripts/PlayerInteractiosHost.gd" id="8_00tjw"]
 [ext_resource type="PackedScene" uid="uid://cpfcvndbajgx7" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="8_od3ui"]
-[ext_resource type="Script" uid="uid://de5w678ld6451" path="res://Player/Scripts/state_stun.gd" id="9_p5o4e"]
+[ext_resource type="Script" uid="uid://de5w678ld6451" path="res://Player/Scripts/state/state_stun.gd" id="9_p5o4e"]
 [ext_resource type="Script" uid="uid://wxike36nhlag" path="res://Player/Scripts/player_camera.gd" id="9_x3vf3"]
 [ext_resource type="PackedScene" uid="uid://dmdp2fi7bbquq" path="res://GeneralNodes/Hitbox/hit_box.tscn" id="11_apopc"]
 [ext_resource type="Script" uid="uid://cojeshm42smt7" path="res://Player/Scripts/push_area.gd" id="12_gu6f8"]
 [ext_resource type="AudioStream" uid="uid://cjunytfc1brw4" path="res://Player/Audio/hit_player.wav" id="13_gu6f8"]
+[ext_resource type="Script" uid="uid://c45yxdqcofjmf" path="res://Player/Scripts/abilities/abilities.gd" id="15_lfmf2"]
+[ext_resource type="PackedScene" uid="uid://woymg6gf84s1" path="res://GeneralNodes/ItemMagnet/item_magnet.tscn" id="16_pisgm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ae8na"]
 radius = 4.98132
@@ -378,6 +380,9 @@ _data = {
 &"defaul": SubResource("Animation_dkpta")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_b1ygp"]
+radius = 15.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 16
 motion_mode = 1
@@ -426,7 +431,7 @@ attack_sound = ExtResource("7_vtle1")
 script = ExtResource("9_p5o4e")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
 editor_draw_limits = true
 script = ExtResource("9_x3vf3")
 
@@ -472,3 +477,12 @@ debug_color = Color(0.6948, 0.688739, 0, 0.419608)
 libraries = {
 &"": SubResource("AnimationLibrary_b1ygp")
 }
+
+[node name="Abilities" type="Node" parent="."]
+script = ExtResource("15_lfmf2")
+
+[node name="ItemMagnet" parent="." instance=ExtResource("16_pisgm")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemMagnet"]
+shape = SubResource("CircleShape2D_b1ygp")
+debug_color = Color(1, 0.116925, 0.142376, 0)

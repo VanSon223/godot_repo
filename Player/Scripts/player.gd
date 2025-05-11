@@ -12,6 +12,7 @@ const DIR_4 =[Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var state_machine : PlayerStateMachine = $StateMachine
 @onready var hit_box : HitBox = $HitBox
+@onready var audio : AudioStreamPlayer2D = $Audio/AudioStreamPlayer2D
 signal  DirectionChaged(new_direction : Vector2)
 signal player_damage( hurt_box : HurtBox )
 

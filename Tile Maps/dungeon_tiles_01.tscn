@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbq5jxaq8oxct"]
+[gd_scene load_steps=5 format=3 uid="uid://bcskysr5no5a6"]
 
-[ext_resource type="Texture2D" uid="uid://dlq8ghisf6blr" path="res://Tile Maps/Sprites/dungeon.png" id="1_2jrom"]
+[ext_resource type="Texture2D" uid="uid://cnpolkv2ibqxu" path="res://Tile Maps/Sprites/dungeon.png" id="1_2jrom"]
+[ext_resource type="Script" uid="uid://bwx222a4l2s5v" path="res://Tile Maps/level_tile_map_layer.gd" id="2_uxkwg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8q12o"]
 texture = ExtResource("1_2jrom")
@@ -256,3 +257,4 @@ z_index = -1
 use_parent_material = true
 tile_set = SubResource("TileSet_wmtgh")
 rendering_quadrant_size = 32
+script = ExtResource("2_uxkwg")

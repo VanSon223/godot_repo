@@ -1,23 +1,25 @@
 extends Node
 
-signal  level_loaded_started
-signal  level_loaded
-signal tilemap_bounds_changed ( bounds : Array[Vector2])
-var current_tile_map_bounds : Array [Vector2]
-var target_transition :String	
-var position_offset : Vector2
+signal level_load_started
+signal level_loaded
+signal tilemap_bounds_changed( bounds : Array[ Vector2 ] )
 
+var current_tile_map_bounds : Array[ Vector2 ]
+var target_transition : String
+var position_offset : Vector2
 
 
 func _ready() -> void:
 	await get_tree().process_frame
 	level_loaded.emit()
-	
-func ChangeTilemapBounds(bounds :Array [Vector2]) -> void:
+
+
+
+func change_tilemap_bounds( bounds : Array[ Vector2 ] ) -> void:
 	current_tile_map_bounds = bounds
-	tilemap_bounds_changed.emit(bounds)
-	
-var is_loading: bool = false
+	tilemap_bounds_changed.emit( bounds )
+
+
 func load_new_level(
 		level_path : String,
 		_target_transition : String,
@@ -28,18 +30,21 @@ func load_new_level(
 	target_transition = _target_transition
 	position_offset = _position_offset
 	
-	await SceneTransition.fate_out() #Level Transition
+	await SceneTransition.fade_out()
 	
-	level_loaded_started.emit()
+	level_load_started.emit()
+	
 	await get_tree().process_frame
-	get_tree().change_scene_to_file(level_path)
 	
-	await SceneTransition.fate_in() #Level Transition	
+	get_tree().change_scene_to_file( level_path )
+	
+	await SceneTransition.fade_in()
 	
 	get_tree().paused = false
 	
 	await get_tree().process_frame
 	
 	level_loaded.emit()
+	
 	
 	pass

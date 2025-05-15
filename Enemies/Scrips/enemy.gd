@@ -79,7 +79,7 @@ func _take_damaged(hurt_box: HurtBox) -> void:
 	if invulnerble:
 		return  # Nếu đang miễn nhiễm thì bỏ qua
 
-	hp -= hurt_box.dame  # Trừ máu
+	hp -= hurt_box.damage  # Trừ máu
 
 	if hp > 0:
 		enemy_dameged.emit(hurt_box)  # Nếu còn sống, phát tín hiệu bị trúng đòn

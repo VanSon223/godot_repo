@@ -1,40 +1,132 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcmcaq04n6xp8"]
+[gd_scene load_steps=10 format=3 uid="uid://bcmcaq04n6xp8"]
 
-[ext_resource type="Script" uid="uid://cbl77qsqnds8a" path="res://Props/Plants/plant.gd" id="1_djs60"]
-[ext_resource type="Texture2D" uid="uid://ohf571vyc0gk" path="res://Props/Sprites/Props.png" id="1_e71d2"]
-[ext_resource type="PackedScene" uid="uid://dmdp2fi7bbquq" path="res://GeneralNodes/Hitbox/hit_box.tscn" id="2_akllp"]
+[ext_resource type="Texture2D" uid="uid://cvm3p4rqs1a8y" path="res://Props/Sprites/Props.png" id="1_8jp5y"]
+[ext_resource type="Script" uid="uid://cbl77qsqnds8a" path="res://Props/Plants/plant.gd" id="1_nve7k"]
+[ext_resource type="PackedScene" uid="uid://dmdp2fi7bbquq" path="res://GeneralNodes/Hitbox/hit_box.tscn" id="2_8ah36"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_djs60"]
-size = Vector2(32, 31)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fodo3"]
+size = Vector2(28, 29)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3sfv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybkkt"]
 size = Vector2(24, 16)
 
+[sub_resource type="Animation" id="Animation_qx88f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_fj6r5"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_buhby"]
+resource_name = "destroy"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qcgu1"]
+_data = {
+&"RESET": SubResource("Animation_qx88f"),
+&"default": SubResource("Animation_fj6r5"),
+&"destroy": SubResource("Animation_buhby")
+}
+
 [node name="Plant" type="Node2D"]
-script = ExtResource("1_djs60")
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_nve7k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -9)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_e71d2")
+texture = ExtResource("1_8jp5y")
 hframes = 16
 vframes = 3
 
-[node name="HitBox" parent="." instance=ExtResource("2_akllp")]
-position = Vector2(0, -9)
-scale = Vector2(0.5, 0.5)
+[node name="HitBox" parent="." instance=ExtResource("2_8ah36")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, 1.5)
-shape = SubResource("RectangleShape2D_djs60")
-debug_color = Color(0.77, 0.590333, 0, 0.419608)
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_fodo3")
+debug_color = Color(1, 0.866667, 0, 0.419608)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, -9)
-scale = Vector2(0.5, 0.5)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 9)
-shape = SubResource("RectangleShape2D_w3sfv")
+shape = SubResource("RectangleShape2D_ybkkt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qcgu1")
+}
+autoplay = "default"

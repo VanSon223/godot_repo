@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://dog4q51k7k4nu"]
+
+[ext_resource type="Texture2D" uid="uid://df816xknvn11f" path="res://npc/sprites/portraits/npc_portrait_01.png" id="1_fxmbg"]
+[ext_resource type="Script" uid="uid://nr1dbdasd305" path="res://npc/scripts/npc_resource.gd" id="1_mlker"]
+[ext_resource type="Texture2D" uid="uid://cor3eb6fht6hn" path="res://npc/sprites/npc_sprite.png" id="3_4tdd8"]
+
+[resource]
+script = ExtResource("1_mlker")
+npc_name = "Oreo"
+sprite = ExtResource("3_4tdd8")
+portrait = ExtResource("1_fxmbg")
+dialog_audio_pitch = 1.0
+metadata/_custom_type_script = "uid://nr1dbdasd305"

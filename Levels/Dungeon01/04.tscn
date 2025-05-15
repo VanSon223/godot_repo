@@ -1,13 +1,23 @@
-[gd_scene load_steps=36 format=4 uid="uid://ltwglm8k1jiq"]
+[gd_scene load_steps=45 format=4 uid="uid://c02cuoa6gsjdy"]
 
-[ext_resource type="Script" uid="uid://buvtubdr85txo" path="res://Levels/scripts/level.gd" id="1_s823n"]
-[ext_resource type="AudioStream" uid="uid://cywoc01vhpsg5" path="res://Levels/music/example_music_03.ogg" id="2_7wgl6"]
-[ext_resource type="PackedScene" uid="uid://dbq5jxaq8oxct" path="res://Tile Maps/dungeon_tiles_01.tscn" id="2_my8dt"]
-[ext_resource type="Texture2D" uid="uid://dlq8ghisf6blr" path="res://Tile Maps/Sprites/dungeon.png" id="3_4nqfk"]
-[ext_resource type="PackedScene" uid="uid://cssah7wp05hn5" path="res://Levels/player_spawn.tscn" id="3_o0q0c"]
-[ext_resource type="PackedScene" uid="uid://c3j12afcnlcge" path="res://Levels/level_transition.tscn" id="4_6uors"]
-[ext_resource type="PackedScene" uid="uid://cpfcvndbajgx7" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="8_jbksl"]
-[ext_resource type="PackedScene" uid="uid://dmdp2fi7bbquq" path="res://GeneralNodes/Hitbox/hit_box.tscn" id="9_fajar"]
+[ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_s823n"]
+[ext_resource type="PackedScene" uid="uid://bcskysr5no5a6" path="res://Tile Maps/dungeon_tiles_01.tscn" id="2_my8dt"]
+[ext_resource type="Texture2D" uid="uid://cnpolkv2ibqxu" path="res://Tile Maps/Sprites/dungeon.png" id="3_4nqfk"]
+[ext_resource type="PackedScene" uid="uid://dr4blo7ya448q" path="res://Levels/player_spawn.tscn" id="3_o0q0c"]
+[ext_resource type="PackedScene" uid="uid://vlpiuopcomwi" path="res://Levels/level_transition.tscn" id="4_6uors"]
+[ext_resource type="PackedScene" uid="uid://d4nhxau2t5qvx" path="res://Props/torches/torch_dungeon.tscn" id="5_pvolj"]
+[ext_resource type="Script" uid="uid://j4py0ng56jx4" path="res://Levels/Dungeon01/dark_wizard/script/dark_wizard_boss.gd" id="6_44rxy"]
+[ext_resource type="PackedScene" uid="uid://de52jxqemilpu" path="res://GeneralNodes/PersistentDataHandler/persistent-data-handler.tscn" id="6_k4oeh"]
+[ext_resource type="Texture2D" uid="uid://bra05ahxi0gin" path="res://Levels/Dungeon01/dark_wizard/sprites/boss-cloak.png" id="6_q4y28"]
+[ext_resource type="PackedScene" uid="uid://bxb6iayrmx1rw" path="res://Levels/Dungeon01/dark_wizard/energy_beam.tscn" id="7_0qxml"]
+[ext_resource type="Texture2D" uid="uid://cxawdw6nbh356" path="res://Levels/Dungeon01/dark_wizard/sprites/boss-hand.png" id="7_1pesq"]
+[ext_resource type="PackedScene" uid="uid://cpvl4rru3x52v" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="8_jbksl"]
+[ext_resource type="PackedScene" uid="uid://c041sb462wu22" path="res://GeneralNodes/HitBox/hit_box.tscn" id="9_fajar"]
+[ext_resource type="AudioStream" uid="uid://b5yd3deroq2i8" path="res://Levels/Dungeon01/dark_wizard/audio/boss_destroy.wav" id="12_vso8e"]
+[ext_resource type="PackedScene" uid="uid://d0wf2qqncvj5t" path="res://GeneralNodes/ItemDropper/item_dropper.tscn" id="15_wberl"]
+[ext_resource type="Resource" uid="uid://bc035w7hy8e2o" path="res://Items/magical_flute.tres" id="16_sf2tf"]
+[ext_resource type="PackedScene" uid="uid://b523kljtfiar7" path="res://quests/utility_nodes/quest_advance_trigger.tscn" id="17_ngji5"]
+[ext_resource type="Resource" uid="uid://cvnr3a38pmudn" path="res://quests/recover_lost_flute.tres" id="18_4t3f6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8q12o"]
 texture = ExtResource("3_4nqfk")
@@ -591,9 +601,6 @@ tracks/5/keys = {
 "values": [Vector2(-20, 4), Vector2(-20, -11), Vector2(-20, 7), Vector2(-20, 7), Vector2(-20, 4)]
 }
 
-[sub_resource type="Resource" id="Resource_q0e7s"]
-metadata/__load_path__ = "res://Levels/Dungeon01/dark_wizard/audio/boss_destroy.wav"
-
 [sub_resource type="Animation" id="Animation_1es0q"]
 resource_name = "destroy"
 length = 4.0
@@ -680,7 +687,7 @@ tracks/6/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": SubResource("Resource_q0e7s")
+"stream": ExtResource("12_vso8e")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -951,7 +958,6 @@ fill_to = Vector2(1, 0.5)
 
 [node name="04" type="Node2D"]
 script = ExtResource("1_s823n")
-music = ExtResource("2_7wgl6")
 
 [node name="Dungeon Tiles 01" parent="." instance=ExtResource("2_my8dt")]
 tile_map_data = PackedByteArray("AAAAAAAAAQAJAAAAAAAAAAEAAQAJAAEAAAAAAAIAAQAJAAIAAAAAAAMAAQAJAAMAAAAAAAQAAQAJAAMAAAAAAAUAAQAJAAMAAAAAAAYAAQAJAAMAAAAAAAcAAQAJAAMAAAAAAAgAAQAJAAMAAAAAAAkAAQAJAAQAAAAAAAoAAQAJAAUAAAAAAAsAAQAJAAYAAAABAAAAAQAKAAAAAAABAAEAAQAKAAEAAAABAAIAAQAKAAIAAAABAAMAAQAKAAMAAAABAAQAAQAKAAMAAAABAAUAAQAKAAMAAAABAAYAAQAKAAMAAAABAAcAAQAKAAMAAAABAAgAAQAKAAMAAAABAAkAAQAKAAQAAAABAAoAAQAKAAUAAAABAAsAAQAKAAYAAAACAAAAAQALAAAAAAACAAEAAQALAAEAAAACAAIAAQALAAIAAAACAAMAAQALAAMAAAACAAQAAQALAAMAAAACAAUAAQALAAMAAAACAAYAAQALAAMAAAACAAcAAQALAAMAAAACAAgAAQALAAMAAAACAAkAAQALAAQAAAACAAoAAQALAAUAAAACAAsAAQALAAYAAAADAAAAAQAMAAAAAAADAAEAAQAMAAEAAAADAAIAAQAMAAIAAAADAAMAAQABAAIAAAADAAQAAQAAAAIAAAADAAUAAQAAAAIAAAADAAYAAQACAAAAAAADAAcAAQADAAAAAAADAAgAAQABAAQAAAADAAkAAQAMAAQAAAADAAoAAQAMAAUAAAADAAsAAQAMAAYAAAAEAAAAAQAEAAUAAAAEAAEAAQAEAAYAAAAEAAIAAQAEAAcAAAAEAAMAAQABAAAAAAAEAAQAAQABAAEAAAAEAAUAAQAAAAAAAAAEAAYAAQABAAAAAAAEAAcAAQAAAAEAAAAEAAgAAQADAAEAAAAEAAkAAQAAAAUAAAAEAAoAAQAAAAYAAAAEAAsAAQAAAAcAAAAFAAAAAQAHAAUAAAAFAAEAAQAHAAYAAAAFAAIAAQAHAAcAAAAFAAMAAQAAAAEAAAAFAAQAAQADAAAAAAAFAAUAAQADAAAAAAAFAAYAAQABAAAAAAAFAAcAAQADAAAAAAAFAAgAAQAAAAEAAAAFAAkAAQADAAUAAAAFAAoAAQADAAYAAAAFAAsAAQADAAcAAAAGAAAAAQAMAAAAAAAGAAEAAQAMAAEAAAAGAAIAAQAMAAIAAAAGAAMAAQAAAAEAAAAGAAQAAQABAAEAAAAGAAUAAQACAAIAAAAGAAYAAQAAAAAAAAAGAAcAAQACAAIAAAAGAAgAAQACAAEAAAAGAAkAAQAAAAUAAAAGAAoAAQAAAAYAAAAGAAsAAQAAAAcAAAAHAAAAAQAMAAAAAAAHAAEAAQAMAAEAAAAHAAIAAQAMAAIAAAAHAAMAAQAAAAEAAAAHAAQAAQADAAIAAAAHAAUAAQABAAIAAAAHAAYAAQADAAAAAAAHAAcAAQADAAAAAAAHAAgAAQABAAQAAAAHAAkAAQABAAUAAAAHAAoAAQABAAYAAAAHAAsAAQABAAcAAAAIAAAAAQAMAAAAAAAIAAEAAQAMAAEAAAAIAAIAAQAMAAIAAAAIAAMAAQABAAAAAAAIAAQAAQABAAAAAAAIAAUAAQADAAIAAAAIAAYAAQAAAAEAAAAIAAcAAQABAAIAAAAIAAgAAQAAAAEAAAAIAAkAAQACAAUAAAAIAAoAAQACAAYAAAAIAAsAAQACAAcAAAAJAAAAAQAMAAAAAAAJAAEAAQAMAAEAAAAJAAIAAQAMAAIAAAAJAAMAAQAAAAMAAAAJAAQAAQABAAAAAAAJAAUAAQADAAEAAAAJAAYAAQACAAAAAAAJAAcAAQAAAAIAAAAJAAgAAQADAAEAAAAJAAkAAQADAAUAAAAJAAoAAQADAAYAAAAJAAsAAQADAAcAAAAKAAAAAQAEAAUAAAAKAAEAAQAEAAYAAAAKAAIAAQAEAAcAAAAKAAMAAQABAAAAAAAKAAQAAQADAAAAAAAKAAUAAQADAAEAAAAKAAYAAQACAAAAAAAKAAcAAQADAAIAAAAKAAgAAQACAAEAAAAKAAkAAQAAAAUAAAAKAAoAAQAAAAYAAAAKAAsAAQAAAAcAAAALAAAAAQAHAAUAAAALAAEAAQAHAAYAAAALAAIAAQAHAAcAAAALAAMAAQADAAIAAAALAAQAAQADAAIAAAALAAUAAQADAAAAAAALAAYAAQADAAIAAAALAAcAAQABAAAAAAALAAgAAQACAAIAAAALAAkAAQADAAUAAAALAAoAAQADAAYAAAALAAsAAQADAAcAAAAMAAAAAQAMAAAAAAAMAAEAAQAMAAEAAAAMAAIAAQAMAAIAAAAMAAMAAQADAAAAAAAMAAQAAQADAAIAAAAMAAUAAQABAAAAAAAMAAYAAQADAAEAAAAMAAcAAQACAAAAAAAMAAgAAQADAAAAAAAMAAkAAQAMAAQAAAAMAAoAAQAMAAUAAAAMAAsAAQAMAAYAAAANAAAAAQANAAAAAAANAAEAAQANAAEAAAANAAIAAQANAAIAAAANAAMAAQANAAMAAAANAAQAAQANAAMAAAANAAUAAQANAAMAAAANAAYAAQANAAMAAAANAAcAAQANAAMAAAANAAgAAQANAAMAAAANAAkAAQANAAQAAAANAAoAAQANAAUAAAANAAsAAQANAAYAAAAOAAAAAQAOAAAAAAAOAAEAAQAOAAEAAAAOAAIAAQAOAAIAAAAOAAMAAQAOAAMAAAAOAAQAAQAOAAMAAAAOAAUAAQAOAAMAAAAOAAYAAQAOAAMAAAAOAAcAAQAOAAMAAAAOAAgAAQAOAAMAAAAOAAkAAQAOAAQAAAAOAAoAAQAOAAUAAAAOAAsAAQAOAAYAAAAPAAAAAQAPAAAAAAAPAAEAAQAPAAEAAAAPAAIAAQAPAAIAAAAPAAMAAQAPAAMAAAAPAAQAAQAPAAMAAAAPAAUAAQAPAAMAAAAPAAYAAQAPAAMAAAAPAAcAAQAPAAMAAAAPAAgAAQAPAAMAAAAPAAkAAQAPAAQAAAAPAAoAAQAPAAUAAAAPAAsAAQAPAAYAAAA=")
@@ -971,6 +977,18 @@ level = "res://Levels/Dungeon01/02.tscn"
 target_transition_area = "LevelTransition3"
 side = 3
 
+[node name="TorchDungeon" parent="." instance=ExtResource("5_pvolj")]
+position = Vector2(112, 102)
+
+[node name="TorchDungeon2" parent="." instance=ExtResource("5_pvolj")]
+position = Vector2(402, 102)
+
+[node name="TorchDungeon3" parent="." instance=ExtResource("5_pvolj")]
+position = Vector2(402, 280)
+
+[node name="TorchDungeon4" parent="." instance=ExtResource("5_pvolj")]
+position = Vector2(112, 280)
+
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(0.306, 0.36, 0.324, 1)
 energy = 0.8
@@ -978,6 +996,10 @@ blend_mode = 2
 
 [node name="DarkWizardBoss" type="Node2D" parent="."]
 y_sort_enabled = true
+script = ExtResource("6_44rxy")
+max_hp = 1
+
+[node name="PersistentDataHandler" parent="DarkWizardBoss" instance=ExtResource("6_k4oeh")]
 
 [node name="BossNode" type="Node2D" parent="DarkWizardBoss"]
 position = Vector2(257, 191)
@@ -988,20 +1010,23 @@ texture = SubResource("GradientTexture2D_m3dee")
 [node name="CloakSprite" type="Sprite2D" parent="DarkWizardBoss/BossNode"]
 modulate = Color(2, 1.25, 1.5, 1)
 position = Vector2(0, -34)
+texture = ExtResource("6_q4y28")
 hframes = 9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DarkWizardBoss/BossNode/CloakSprite"]
 libraries = {
-&"": SubResource("AnimationLibrary_ij6gb")
+"": SubResource("AnimationLibrary_ij6gb")
 }
 autoplay = "down"
 
 [node name="Hand01" type="Sprite2D" parent="DarkWizardBoss/BossNode/CloakSprite"]
 position = Vector2(20, 4)
+texture = ExtResource("7_1pesq")
 hframes = 16
 
 [node name="Hand02" type="Sprite2D" parent="DarkWizardBoss/BossNode/CloakSprite"]
 position = Vector2(-20, 4)
+texture = ExtResource("7_1pesq")
 flip_h = true
 hframes = 16
 
@@ -1009,12 +1034,14 @@ hframes = 16
 visible = false
 show_behind_parent = true
 position = Vector2(20, 4)
+texture = ExtResource("7_1pesq")
 hframes = 16
 
 [node name="Hand02_UP" type="Sprite2D" parent="DarkWizardBoss/BossNode/CloakSprite"]
 visible = false
 show_behind_parent = true
 position = Vector2(-20, 4)
+texture = ExtResource("7_1pesq")
 flip_h = true
 hframes = 16
 
@@ -1022,12 +1049,14 @@ hframes = 16
 visible = false
 show_behind_parent = true
 position = Vector2(20, 4)
+texture = ExtResource("7_1pesq")
 offset = Vector2(-12, -4)
 hframes = 16
 
 [node name="Hand02_SIDE" type="Sprite2D" parent="DarkWizardBoss/BossNode/CloakSprite"]
 visible = false
 position = Vector2(-20, 4)
+texture = ExtResource("7_1pesq")
 offset = Vector2(20, 4)
 hframes = 16
 
@@ -1051,20 +1080,42 @@ debug_color = Color(1, 0.973, 0, 0)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DarkWizardBoss/BossNode"]
 max_polyphony = 2
+bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DarkWizardBoss/BossNode"]
 libraries = {
-&"": SubResource("AnimationLibrary_ar58h")
+"": SubResource("AnimationLibrary_ar58h")
 }
 autoplay = "idle"
 
 [node name="AnimationPlayer_Damaged" type="AnimationPlayer" parent="DarkWizardBoss/BossNode"]
 libraries = {
-&"": SubResource("AnimationLibrary_6s46g")
+"": SubResource("AnimationLibrary_6s46g")
 }
 autoplay = "default"
 
 [node name="BeamAttacks" type="Node2D" parent="DarkWizardBoss"]
+
+[node name="EB_H1" parent="DarkWizardBoss/BeamAttacks" instance=ExtResource("7_0qxml")]
+position = Vector2(257, 116)
+
+[node name="EB_H2" parent="DarkWizardBoss/BeamAttacks" instance=ExtResource("7_0qxml")]
+position = Vector2(257, 191)
+
+[node name="EB_H3" parent="DarkWizardBoss/BeamAttacks" instance=ExtResource("7_0qxml")]
+position = Vector2(257, 262)
+
+[node name="EB_V1" parent="DarkWizardBoss/BeamAttacks" instance=ExtResource("7_0qxml")]
+position = Vector2(157, 191)
+rotation = 1.5708
+
+[node name="EB_V2" parent="DarkWizardBoss/BeamAttacks" instance=ExtResource("7_0qxml")]
+position = Vector2(257, 191)
+rotation = 1.5708
+
+[node name="EB_V3" parent="DarkWizardBoss/BeamAttacks" instance=ExtResource("7_0qxml")]
+position = Vector2(357, 191)
+rotation = 1.5708
 
 [node name="PositionTargets" type="Node2D" parent="DarkWizardBoss"]
 
@@ -1083,3 +1134,17 @@ texture = SubResource("GradientTexture2D_si5al")
 [node name="Sprite2D3" type="Sprite2D" parent="DarkWizardBoss/PositionTargets"]
 position = Vector2(115, 192)
 texture = SubResource("GradientTexture2D_si5al")
+
+[node name="ItemDropper" parent="DarkWizardBoss" instance=ExtResource("15_wberl")]
+position = Vector2(314, 192)
+item_data = ExtResource("16_sf2tf")
+
+[node name="QuestAdvanceTrigger" parent="DarkWizardBoss/ItemDropper" instance=ExtResource("17_ngji5")]
+position = Vector2(-314, -192)
+signal_name = "drop_collected"
+linked_quest = ExtResource("18_4t3f6")
+quest_step = 2
+settings_summary = "UPDATE QUEST:
+Quest: Recover Lost Magical Flute
+Step: 2 - find the magical flute
+Complete: false"

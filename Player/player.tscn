@@ -1,15 +1,16 @@
-[gd_scene load_steps=41 format=3 uid="uid://bb8nr7p6mt056"]
+[gd_scene load_steps=43 format=3 uid="uid://bb8nr7p6mt056"]
 
 [ext_resource type="Script" uid="uid://mwyltyeldm4" path="res://Player/Scripts/player.gd" id="1_k53q1"]
-[ext_resource type="Script" uid="uid://cgjo1gul0t47a" path="res://Player/Scripts/state/player_state_machine.gd" id="2_4ntmi"]
-[ext_resource type="Texture2D" uid="uid://coudtyx6o3u04" path="res://Player/Sprites/Player.png" id="2_k53q1"]
-[ext_resource type="Script" uid="uid://bi8udtm2tcft3" path="res://Player/Scripts/state/state_idle.gd" id="3_btcbx"]
-[ext_resource type="Script" uid="uid://njliyctmv0ox" path="res://Player/Scripts/state/state_walk.gd" id="4_gwnis"]
-[ext_resource type="Script" uid="uid://72wjb7yc30i4" path="res://Player/Scripts/state/state_attack.gd" id="6_fhl08"]
+[ext_resource type="Texture2D" uid="uid://coudtyx6o3u04" path="res://Player/Sprites/player_sprite.png" id="2_k53q1"]
+[ext_resource type="Script" uid="uid://qwkletx8xkdj" path="res://Player/Scripts/states/state_idle.gd" id="4_dkpta"]
+[ext_resource type="Script" uid="uid://bkfuqeti783li" path="res://Player/Scripts/player_state_machine.gd" id="4_lfmf2"]
+[ext_resource type="Script" uid="uid://6je8bp3f2twi" path="res://Player/Scripts/states/state_walk.gd" id="5_lfmf2"]
+[ext_resource type="Script" uid="uid://brxt453p4en6r" path="res://Player/Scripts/states/state_attack.gd" id="6_pisgm"]
+[ext_resource type="Script" uid="uid://balw8bf16tnb1" path="res://Player/Scripts/states/state_stun.gd" id="7_b1ygp"]
 [ext_resource type="AudioStream" uid="uid://15dhy2s8xy1a" path="res://Player/Audio/SwordSwoosh.wav" id="7_vtle1"]
 [ext_resource type="Script" uid="uid://eknh08yn65br" path="res://Player/Scripts/PlayerInteractiosHost.gd" id="8_00tjw"]
+[ext_resource type="Script" uid="uid://dbm16y8n8apf" path="res://Player/Scripts/states/state_death.gd" id="8_o28un"]
 [ext_resource type="PackedScene" uid="uid://cpfcvndbajgx7" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="8_od3ui"]
-[ext_resource type="Script" uid="uid://de5w678ld6451" path="res://Player/Scripts/state/state_stun.gd" id="9_p5o4e"]
 [ext_resource type="Script" uid="uid://wxike36nhlag" path="res://Player/Scripts/player_camera.gd" id="9_x3vf3"]
 [ext_resource type="PackedScene" uid="uid://dmdp2fi7bbquq" path="res://GeneralNodes/Hitbox/hit_box.tscn" id="11_apopc"]
 [ext_resource type="Script" uid="uid://cojeshm42smt7" path="res://Player/Scripts/push_area.gd" id="12_gu6f8"]
@@ -132,6 +133,22 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_b1ygp"]
+resource_name = "death"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [54, 57]
 }
 
 [sub_resource type="Animation" id="Animation_4ntmi"]
@@ -293,6 +310,7 @@ _data = {
 &"attack_down": SubResource("Animation_00tjw"),
 &"attack_side": SubResource("Animation_x3vf3"),
 &"attack_up": SubResource("Animation_apopc"),
+&"death": SubResource("Animation_b1ygp"),
 &"idle_down": SubResource("Animation_4ntmi"),
 &"idle_side": SubResource("Animation_k53q1"),
 &"idle_up": SubResource("Animation_gwnis"),
@@ -415,20 +433,23 @@ libraries = {
 }
 
 [node name="StateMachine" type="Node" parent="."]
-script = ExtResource("2_4ntmi")
+script = ExtResource("4_lfmf2")
 
 [node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("3_btcbx")
+script = ExtResource("4_dkpta")
 
 [node name="Walk" type="Node" parent="StateMachine"]
-script = ExtResource("4_gwnis")
+script = ExtResource("5_lfmf2")
 
 [node name="Attack" type="Node" parent="StateMachine"]
-script = ExtResource("6_fhl08")
+script = ExtResource("6_pisgm")
 attack_sound = ExtResource("7_vtle1")
 
 [node name="Stun" type="Node" parent="StateMachine"]
-script = ExtResource("9_p5o4e")
+script = ExtResource("7_b1ygp")
+
+[node name="Death" type="Node" parent="StateMachine"]
+script = ExtResource("8_o28un")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)

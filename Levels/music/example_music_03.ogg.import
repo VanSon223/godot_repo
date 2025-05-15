@@ -2,7 +2,7 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://cywoc01vhpsg5"
+uid="uid://bss1hbkoufxql"
 path="res://.godot/imported/example_music_03.ogg-c44c87950432cfc97419df968e4b022b.oggvorbisstr"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/example_music_03.ogg-c44c87950432cfc97419df96
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0.0
 bpm=0.0
 beat_count=0

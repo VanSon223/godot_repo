@@ -43,7 +43,7 @@ func player_interact() -> void:
 	is_open_data.set_value()
 	animation_player.play("open_chest")
 	if item_data and quantity > 0:
-		PlayerManager.INVETORY_DATA.add_item( item_data, quantity )
+		PlayerManager.INVENTORY_DATA.add_item( item_data, quantity )
 	else:
 		printerr("No Items in Chest!")
 		push_error("No Items in Chest! Chest Name: ", name)

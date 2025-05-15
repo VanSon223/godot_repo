@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered (b)-> void:
 	if b is Player:
 		if item_data:
-			if PlayerManager.INVETORY_DATA.add_item( item_data ) == true :
+			if PlayerManager.INVENTORY_DATA.add_item( item_data ) == true :
 				item_picked_up()
 	pass
 	

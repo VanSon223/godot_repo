@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bicvhuuhiyld4"]
+[gd_scene load_steps=41 format=3 uid="uid://bicvhuuhiyld4"]
 
 [ext_resource type="Texture2D" uid="uid://b28qc5ef6yfo4" path="res://Enemies/Slime/Slime.png" id="1_byu67"]
 [ext_resource type="Script" uid="uid://0qkdgwj5bavo" path="res://Enemies/Scrips/enemy.gd" id="1_t8cwk"]
@@ -12,11 +12,12 @@
 [ext_resource type="Script" uid="uid://b5n6mm3s58m6m" path="res://Enemies/Scrips/states/enemt_state_stun.gd" id="9_843tw"]
 [ext_resource type="PackedScene" uid="uid://cpfcvndbajgx7" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="10_t1krp"]
 [ext_resource type="Texture2D" uid="uid://e3y8ia3qpco3" path="res://Enemies/Slime/DestroySmoke.png" id="11_nsi17"]
-[ext_resource type="Script" uid="uid://b8ms51r8muegj" path="res://Enemies/Scrips/states/enemt_state_destroy.gd" id="12_843tw"]
+[ext_resource type="Script" uid="uid://hi0vaxterhli" path="res://Enemies/Scrips/states/enemt_state_destroy.gd" id="12_843tw"]
 [ext_resource type="Script" uid="uid://emf03svo0hlg" path="res://Enemies/Scrips/drop_data.gd" id="13_vjyi2"]
 [ext_resource type="Resource" uid="uid://j3ajhw1go5jq" path="res://Items/gem.tres" id="14_yynal"]
 [ext_resource type="Resource" uid="uid://bdjovqkj4pdvb" path="res://Items/apple.tres" id="16_67htc"]
 [ext_resource type="Resource" uid="uid://c41g410twb446" path="res://Items/posion.tres" id="16_yynal"]
+[ext_resource type="PackedScene" uid="uid://2o4ift7dsair" path="res://GeneralNodes/PersistentDataHandler/persistent-data-handler.tscn" id="18_67htc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ktsd"]
 radius = 13.0
@@ -753,6 +754,7 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_t8cwk")
+xp_reward = 10
 
 [node name="HurtBox" parent="." instance=ExtResource("10_t1krp")]
 position = Vector2(0, -6)
@@ -821,3 +823,5 @@ hframes = 6
 libraries = {
 &"": SubResource("AnimationLibrary_2aa7l")
 }
+
+[node name="PersistentDataHandler" parent="." instance=ExtResource("18_67htc")]

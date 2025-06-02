@@ -19,8 +19,9 @@ region = Rect2(192, 0, 32, 32)
 
 [resource]
 script = ExtResource("1_xwhp1")
-name = "Gem"
+name = "Apple"
 description = "Day la qua tao mau do	"
 texture = SubResource("AtlasTexture_uny8u")
+cost = 10
 effects = Array[ExtResource("1_3wksx")]([SubResource("Resource_0m7an")])
 metadata/_custom_type_script = "uid://b5cyfss2mkejy"

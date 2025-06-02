@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b73hijmin5dn2" path="res://quests/scripts/quest_reward_item.gd" id="1_i8hrw"]
 [ext_resource type="Script" uid="uid://ej3xbi7xbvg1" path="res://quests/scripts/quest_resource.gd" id="2_eug46"]
-[ext_resource type="Resource" uid="uid://prvahwyi1iha" path="res://Items/apple.tres" id="2_gf6lq"]
-[ext_resource type="Resource" uid="uid://cixpflhl0cjvo" path="res://Items/gem.tres" id="3_7l62s"]
+[ext_resource type="Resource" uid="uid://bdjovqkj4pdvb" path="res://Items/apple.tres" id="2_gf6lq"]
+[ext_resource type="Resource" uid="uid://j3ajhw1go5jq" path="res://Items/gem.tres" id="3_7l62s"]
 
 [sub_resource type="Resource" id="Resource_1mbj5"]
 script = ExtResource("1_i8hrw")

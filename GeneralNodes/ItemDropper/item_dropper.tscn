@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://k4dfd4fkp3rv"]
 
 [ext_resource type="Script" uid="uid://b2ubdx4m72mlp" path="res://GeneralNodes/ItemDropper/item_dropper.gd" id="1_cieq7"]
-[ext_resource type="PackedScene" uid="uid://2o4ift7dsair" path="res://GeneralNodes/PersistentDataHandler/persistent_data_handler.tscn" id="2_afh5s"]
+[ext_resource type="PackedScene" uid="uid://2o4ift7dsair" path="res://GeneralNodes/PersistentDataHandler/persistent-data-handler.tscn" id="2_afh5s"]
 [ext_resource type="AudioStream" uid="uid://o6pq1p1jk2hx" path="res://GeneralNodes/ItemDropper/dungeon_discovery.wav" id="2_xbnca"]
 
 [node name="ItemDropper" type="Node2D"]

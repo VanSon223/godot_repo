@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp6fsqk3ai5qh"]
+
+[ext_resource type="Script" uid="uid://vhi13oh8ptlc" path="res://coding/click_button.gd" id="1_atn60"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_atn60"]
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="ClickButton" type="Button"]
+custom_minimum_size = Vector2(100, 36)
+offset_top = 1.0
+offset_right = 100.0
+offset_bottom = 37.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_atn60")
+script = ExtResource("1_atn60")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 98.0
+offset_bottom = 28.0
+text = "Label "
+clip_text = true
+text_overrun_behavior = 3

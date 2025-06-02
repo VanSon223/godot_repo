@@ -1,9 +1,23 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=3 format=3 uid="uid://8cdd8tfj6gy2"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=7 format=3 uid="uid://8cdd8tfj6gy2"]
 
 [ext_resource type="Script" uid="uid://c6saqm1882lc2" path="res://GUI/pause_menu/inventory/scripts/inventory_data.gd" id="1_x61lb"]
 [ext_resource type="Script" uid="uid://cg583c0wsmcya" path="res://GUI/pause_menu/inventory/scripts/slot_data.gd" id="2_1btyl"]
+[ext_resource type="Resource" uid="uid://gjda8on0uyn5" path="res://Items/a_tunic.tres" id="3_1btyl"]
+[ext_resource type="Resource" uid="uid://bdegy4arxdq7" path="res://Items/w_iron_sword.tres" id="4_6kbrr"]
+
+[sub_resource type="Resource" id="Resource_6kbrr"]
+script = ExtResource("2_1btyl")
+item_data = ExtResource("3_1btyl")
+quantity = 1
+metadata/_custom_type_script = "uid://cg583c0wsmcya"
+
+[sub_resource type="Resource" id="Resource_d33ra"]
+script = ExtResource("2_1btyl")
+item_data = ExtResource("4_6kbrr")
+quantity = 1
+metadata/_custom_type_script = "uid://cg583c0wsmcya"
 
 [resource]
 script = ExtResource("1_x61lb")
-slots = Array[ExtResource("2_1btyl")]([null, null, null, null, null, null, null, null, null, null])
+slots = Array[ExtResource("2_1btyl")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, SubResource("Resource_6kbrr"), SubResource("Resource_d33ra"), null, null])
 metadata/_custom_type_script = "uid://c6saqm1882lc2"

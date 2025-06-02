@@ -3,7 +3,9 @@ class_name TreasureChest extends Node2D
 
 @export var item_data : ItemData : set = _set_item_data
 @export var quantity : int = 1 : set = _set_quantity
+@export var quiz: Question
 
+var quiz_active := false
 var is_open : bool = false
 
 @onready var sprite: Sprite2D = $ItemSprite
@@ -37,18 +39,49 @@ func set_chest_state() -> void:
 
 
 func player_interact() -> void:
-	if is_open == true:
+	#if is_open == true:
+		#return
+	#is_open = true
+	#is_open_data.set_value()
+	#animation_player.play("open_chest")
+	#if item_data and quantity > 0:
+		#PlayerManager.INVENTORY_DATA.add_item( item_data, quantity )
+	#else:
+		#printerr("No Items in Chest!")
+		#push_error("No Items in Chest! Chest Name: ", name)
+		
+	if is_open or quiz_active:
 		return
-	is_open = true
-	is_open_data.set_value()
-	animation_player.play("open_chest")
-	if item_data and quantity > 0:
-		PlayerManager.INVENTORY_DATA.add_item( item_data, quantity )
-	else:
-		printerr("No Items in Chest!")
-		push_error("No Items in Chest! Chest Name: ", name)
-	pass
 
+	quiz_active = true
+
+	# Lấy câu hỏi ngẫu nhiên
+	var question := QuestionLoader.get_random_question()
+	var dialog_scene := preload("res://coding/quiz_dialog.tscn")
+	var dialog := dialog_scene.instantiate()
+	dialog.set_question(question)
+
+	# Kết nối signal quiz_answered với 2 hàm xử lý
+	dialog.quiz_answered.connect(_on_quiz_answered)
+	dialog.quiz_answered.connect(_on_quiz_closed)
+	
+	get_tree().current_scene.add_child(dialog)
+
+func _on_quiz_answered(correct: bool) -> void:
+	if correct:
+		print("✅ Trả lời đúng! Nhận vật phẩm.")
+		PlayerManager.INVENTORY_DATA.add_item(item_data, quantity)
+
+		# ✅ Chỉ mở rương nếu trả lời đúng
+		is_open = true
+		is_open_data.set_value()
+		animation_player.play("open_chest")
+	else:
+		print("❌ Trả lời sai! Không có phần thưởng.")
+		
+func _on_quiz_closed(_correct: bool) -> void:
+	# Khi dialog đóng hoặc trả lời xong, reset trạng thái
+	quiz_active = false
 
 func _on_area_enter( _a : Area2D ) -> void:
 	PlayerManager.interact_pressed.connect( player_interact )

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bj60xbiitx4dr" path="res://Tile Maps/Sprites/Grass-01.png" id="1_7lctj"]
 [ext_resource type="Texture2D" uid="uid://cil40bbd1xxuj" path="res://Tile Maps/Sprites/dungeon_entrance.png" id="2_3oid6"]
-[ext_resource type="Script" uid="uid://u2fjpb8o6ccl" path="res://Tile Maps/level_tile_map_layer.gd" id="2_o37qp"]
+[ext_resource type="Script" uid="uid://bwx222a4l2s5v" path="res://Tile Maps/level_tile_map_layer.gd" id="2_o37qp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o37qp"]
 texture = ExtResource("1_7lctj")
@@ -500,3 +500,4 @@ sources/2 = SubResource("TileSetAtlasSource_cyeov")
 tile_set = SubResource("TileSet_3oid6")
 rendering_quadrant_size = 32
 script = ExtResource("2_o37qp")
+update_bounds = false

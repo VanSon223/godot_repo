@@ -1,21 +1,21 @@
-[gd_scene load_steps=45 format=4 uid="uid://c02cuoa6gsjdy"]
+[gd_scene load_steps=45 format=4 uid="uid://ltwglm8k1jiq"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_s823n"]
-[ext_resource type="PackedScene" uid="uid://bcskysr5no5a6" path="res://Tile Maps/dungeon_tiles_01.tscn" id="2_my8dt"]
-[ext_resource type="Texture2D" uid="uid://cnpolkv2ibqxu" path="res://Tile Maps/Sprites/dungeon.png" id="3_4nqfk"]
+[ext_resource type="PackedScene" uid="uid://dbq5jxaq8oxct" path="res://Tile Maps/dungeon_tiles_01.tscn" id="2_my8dt"]
+[ext_resource type="Texture2D" uid="uid://dlq8ghisf6blr" path="res://Tile Maps/Sprites/dungeon.png" id="3_4nqfk"]
 [ext_resource type="PackedScene" uid="uid://dr4blo7ya448q" path="res://Levels/player_spawn.tscn" id="3_o0q0c"]
-[ext_resource type="PackedScene" uid="uid://vlpiuopcomwi" path="res://Levels/level_transition.tscn" id="4_6uors"]
+[ext_resource type="PackedScene" uid="uid://c3j12afcnlcge" path="res://Levels/level_transition.tscn" id="4_6uors"]
 [ext_resource type="PackedScene" uid="uid://d4nhxau2t5qvx" path="res://Props/torches/torch_dungeon.tscn" id="5_pvolj"]
 [ext_resource type="Script" uid="uid://j4py0ng56jx4" path="res://Levels/Dungeon01/dark_wizard/script/dark_wizard_boss.gd" id="6_44rxy"]
-[ext_resource type="PackedScene" uid="uid://de52jxqemilpu" path="res://GeneralNodes/PersistentDataHandler/persistent-data-handler.tscn" id="6_k4oeh"]
 [ext_resource type="Texture2D" uid="uid://bra05ahxi0gin" path="res://Levels/Dungeon01/dark_wizard/sprites/boss-cloak.png" id="6_q4y28"]
 [ext_resource type="PackedScene" uid="uid://bxb6iayrmx1rw" path="res://Levels/Dungeon01/dark_wizard/energy_beam.tscn" id="7_0qxml"]
 [ext_resource type="Texture2D" uid="uid://cxawdw6nbh356" path="res://Levels/Dungeon01/dark_wizard/sprites/boss-hand.png" id="7_1pesq"]
-[ext_resource type="PackedScene" uid="uid://cpvl4rru3x52v" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="8_jbksl"]
-[ext_resource type="PackedScene" uid="uid://c041sb462wu22" path="res://GeneralNodes/HitBox/hit_box.tscn" id="9_fajar"]
+[ext_resource type="PackedScene" uid="uid://2o4ift7dsair" path="res://GeneralNodes/PersistentDataHandler/persistent-data-handler.tscn" id="8_867rx"]
+[ext_resource type="PackedScene" uid="uid://cpfcvndbajgx7" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="8_jbksl"]
+[ext_resource type="PackedScene" uid="uid://dmdp2fi7bbquq" path="res://GeneralNodes/Hitbox/hit_box.tscn" id="9_fajar"]
 [ext_resource type="AudioStream" uid="uid://b5yd3deroq2i8" path="res://Levels/Dungeon01/dark_wizard/audio/boss_destroy.wav" id="12_vso8e"]
-[ext_resource type="PackedScene" uid="uid://d0wf2qqncvj5t" path="res://GeneralNodes/ItemDropper/item_dropper.tscn" id="15_wberl"]
-[ext_resource type="Resource" uid="uid://bc035w7hy8e2o" path="res://Items/magical_flute.tres" id="16_sf2tf"]
+[ext_resource type="PackedScene" uid="uid://k4dfd4fkp3rv" path="res://GeneralNodes/ItemDropper/item_dropper.tscn" id="15_wberl"]
+[ext_resource type="Resource" uid="uid://bc035w7hy8e2o" path="res://Items/magical_flute.tres" id="16_4wfmf"]
 [ext_resource type="PackedScene" uid="uid://b523kljtfiar7" path="res://quests/utility_nodes/quest_advance_trigger.tscn" id="17_ngji5"]
 [ext_resource type="Resource" uid="uid://cvnr3a38pmudn" path="res://quests/recover_lost_flute.tres" id="18_4t3f6"]
 
@@ -956,7 +956,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
 
-[node name="04" type="Node2D"]
+[node name="04_D" type="Node2D"]
 script = ExtResource("1_s823n")
 
 [node name="Dungeon Tiles 01" parent="." instance=ExtResource("2_my8dt")]
@@ -999,7 +999,7 @@ y_sort_enabled = true
 script = ExtResource("6_44rxy")
 max_hp = 1
 
-[node name="PersistentDataHandler" parent="DarkWizardBoss" instance=ExtResource("6_k4oeh")]
+[node name="PersistentDataHandler" parent="DarkWizardBoss" instance=ExtResource("8_867rx")]
 
 [node name="BossNode" type="Node2D" parent="DarkWizardBoss"]
 position = Vector2(257, 191)
@@ -1015,7 +1015,7 @@ hframes = 9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DarkWizardBoss/BossNode/CloakSprite"]
 libraries = {
-"": SubResource("AnimationLibrary_ij6gb")
+&"": SubResource("AnimationLibrary_ij6gb")
 }
 autoplay = "down"
 
@@ -1084,13 +1084,13 @@ bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DarkWizardBoss/BossNode"]
 libraries = {
-"": SubResource("AnimationLibrary_ar58h")
+&"": SubResource("AnimationLibrary_ar58h")
 }
 autoplay = "idle"
 
 [node name="AnimationPlayer_Damaged" type="AnimationPlayer" parent="DarkWizardBoss/BossNode"]
 libraries = {
-"": SubResource("AnimationLibrary_6s46g")
+&"": SubResource("AnimationLibrary_6s46g")
 }
 autoplay = "default"
 
@@ -1137,7 +1137,9 @@ texture = SubResource("GradientTexture2D_si5al")
 
 [node name="ItemDropper" parent="DarkWizardBoss" instance=ExtResource("15_wberl")]
 position = Vector2(314, 192)
-item_data = ExtResource("16_sf2tf")
+item_data = ExtResource("16_4wfmf")
+item_id = "1"
+map_name = "04_D"
 
 [node name="QuestAdvanceTrigger" parent="DarkWizardBoss/ItemDropper" instance=ExtResource("17_ngji5")]
 position = Vector2(-314, -192)

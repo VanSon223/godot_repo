@@ -26,7 +26,7 @@ func _ready() -> void:
 func open_door() -> void:
 	if key_item == null:
 		return
-	var door_unlocked = PlayerManager.INVETORY_DATA.use_item( key_item )
+	var door_unlocked = PlayerManager.INVENTORY_DATA.use_item( key_item )
 	
 	if door_unlocked:
 		animation_player.play( "open_door" )

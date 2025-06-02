@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="EquipableItemData" load_steps=8 format=3 uid="uid://bwjgt4avq54bc"]
+
+[ext_resource type="Script" uid="uid://d0dl16xmrpd66" path="res://Items/item_effects/item_effect.gd" id="1_s2cra"]
+[ext_resource type="Script" path="res://Items/scripts/equipable_item_modifier.gd" id="2_s2cra"]
+[ext_resource type="Script" uid="uid://c5iq7u0bmbjjq" path="res://Items/scripts/equipable_item_data.gd" id="3_jan8j"]
+[ext_resource type="Texture2D" uid="uid://d2b30nmoynyc2" path="res://Items/sprites/gear.png" id="3_qb6u6"]
+
+[sub_resource type="Resource" id="Resource_jan8j"]
+script = ExtResource("2_s2cra")
+type = 1
+value = 5
+metadata/_custom_type_script = "uid://cvlavxf8cfh2r"
+
+[sub_resource type="Resource" id="Resource_qb6u6"]
+script = ExtResource("2_s2cra")
+type = 2
+value = 1
+metadata/_custom_type_script = "uid://cvlavxf8cfh2r"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jan8j"]
+atlas = ExtResource("3_qb6u6")
+region = Rect2(224, 0, 32, 32)
+
+[resource]
+script = ExtResource("3_jan8j")
+type = 3
+modifiers = Array[ExtResource("2_s2cra")]([SubResource("Resource_jan8j"), SubResource("Resource_qb6u6")])
+name = "Ring"
+description = "Đây là nhẫn !!!!!!!!!!!"
+texture = SubResource("AtlasTexture_jan8j")
+cost = 10
+effects = Array[ExtResource("1_s2cra")]([])
+metadata/_custom_type_script = "uid://c5iq7u0bmbjjq"

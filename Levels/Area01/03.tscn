@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bicvhuuhiyld4" path="res://Enemies/Slime/slime.tscn" id="5_6j82e"]
 [ext_resource type="PackedScene" uid="uid://c3j12afcnlcge" path="res://Levels/level_transition.tscn" id="5_40pm8"]
 
-[node name="03" type="Node2D"]
+[node name="03_A" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_bspbj")
 music = ExtResource("2_wavkr")
@@ -20,12 +20,18 @@ position = Vector2(306, 175)
 
 [node name="Slime" parent="." instance=ExtResource("5_6j82e")]
 position = Vector2(423, 96)
+enemy_id = "slime_id01"
+map_name = "03_A"
 
 [node name="Slime2" parent="." instance=ExtResource("5_6j82e")]
 position = Vector2(267, 245)
+enemy_id = "slime_id02"
+map_name = "03_A"
 
 [node name="Slime3" parent="." instance=ExtResource("5_6j82e")]
 position = Vector2(181, 76)
+enemy_id = "slime_id03"
+map_name = "03_A"
 
 [node name="LevelTransition" parent="." instance=ExtResource("5_40pm8")]
 position = Vector2(0, 176)

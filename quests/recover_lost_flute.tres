@@ -3,24 +3,22 @@
 [ext_resource type="Script" uid="uid://b73hijmin5dn2" path="res://quests/scripts/quest_reward_item.gd" id="1_vowv8"]
 [ext_resource type="Script" uid="uid://ej3xbi7xbvg1" path="res://quests/scripts/quest_resource.gd" id="2_knyee"]
 [ext_resource type="Resource" uid="uid://j3ajhw1go5jq" path="res://Items/gem.tres" id="2_xpykv"]
+[ext_resource type="Resource" uid="uid://c41g410twb446" path="res://Items/posion.tres" id="3_uaykj"]
 
 [sub_resource type="Resource" id="Resource_slc1x"]
 script = ExtResource("1_vowv8")
 item = ExtResource("2_xpykv")
 quantity = 100
 
-[sub_resource type="Resource" id="Resource_7sluy"]
-metadata/__load_path__ = "res://Items/potion.tres"
-
 [sub_resource type="Resource" id="Resource_cvh1b"]
 script = ExtResource("1_vowv8")
-item = SubResource("Resource_7sluy")
+item = ExtResource("3_uaykj")
 quantity = 5
 
 [resource]
 script = ExtResource("2_knyee")
-title = "Recover Lost Magical Flute"
-description = "Nero has tasked the hero with retreiveing his lost magical flute from the dark dungeon."
-steps = Array[String](["Find the Cave Entrance", "Find the Magical Flute", "Return Magical Flute to Nero"])
+title = "Tìm cây sáo ma thuật bị mất"
+description = "Cam đã giao cho người anh hùng nhiệm vụ tìm lại cây sáo ma thuật bị mất của mình từ ngục tối."
+steps = Array[String](["Tìm lối vào hang động", "Tìm cây sáo thần kỳ", "Trả lại cây sáo ma thuật cho Cam"])
 reward_xp = 100
 reward_items = Array[ExtResource("1_vowv8")]([SubResource("Resource_slc1x"), SubResource("Resource_cvh1b")])

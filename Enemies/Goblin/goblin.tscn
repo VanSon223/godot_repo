@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bq4bq6wx28u45"]
+[gd_scene load_steps=46 format=3 uid="uid://bq4bq6wx28u45"]
 
 [ext_resource type="Script" uid="uid://0qkdgwj5bavo" path="res://Enemies/Scrips/enemy.gd" id="1_r3i0u"]
 [ext_resource type="PackedScene" uid="uid://cpfcvndbajgx7" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="2_p257j"]
@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://b02sqjkyp7fwv" path="res://Enemies/Scrips/states/enemt_state_idle.gd" id="9_btbsb"]
 [ext_resource type="Script" uid="uid://dvwcpijv3eape" path="res://Enemies/Scrips/states/enemt_state_wander.gd" id="10_12gec"]
 [ext_resource type="Script" uid="uid://b5n6mm3s58m6m" path="res://Enemies/Scrips/states/enemt_state_stun.gd" id="11_70q8a"]
-[ext_resource type="Script" uid="uid://b8ms51r8muegj" path="res://Enemies/Scrips/states/enemt_state_destroy.gd" id="12_1n8tx"]
+[ext_resource type="Script" uid="uid://hi0vaxterhli" path="res://Enemies/Scrips/states/enemt_state_destroy.gd" id="12_1n8tx"]
 [ext_resource type="Script" uid="uid://emf03svo0hlg" path="res://Enemies/Scrips/drop_data.gd" id="13_3lq4b"]
 [ext_resource type="Resource" uid="uid://j3ajhw1go5jq" path="res://Items/gem.tres" id="14_foxsm"]
 [ext_resource type="Resource" uid="uid://d0fnov2exowjj" path="res://Items/key_dungeon.tres" id="15_obyvq"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://e3y8ia3qpco3" path="res://Enemies/Slime/DestroySmoke.png" id="17_d3gn1"]
 [ext_resource type="Script" uid="uid://b85pug4e8cpn5" path="res://Enemies/Scrips/states/enemt_state_chase.gd" id="17_l2k1h"]
 [ext_resource type="PackedScene" uid="uid://ohx0isv7mdqq" path="res://Enemies/vision_area.tscn" id="19_4i25o"]
+[ext_resource type="PackedScene" uid="uid://2o4ift7dsair" path="res://GeneralNodes/PersistentDataHandler/persistent-data-handler.tscn" id="20_4i25o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ktsd"]
 radius = 13.0
@@ -732,7 +733,6 @@ vframes = 3
 [node name="AttackHurtBox" parent="Sprite2D" instance=ExtResource("2_p257j")]
 position = Vector2(0, 11)
 monitoring = false
-dame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/AttackHurtBox"]
 shape = SubResource("CircleShape2D_3ktsd")
@@ -794,4 +794,6 @@ libraries = {
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionArea"]
 position = Vector2(0, -8)
-polygon = PackedVector2Array(-16, 0, 16, 0, 128, 128, -128, 128)
+polygon = PackedVector2Array(-16, 0, 16, 0, 64, 64, -64, 64)
+
+[node name="PersistentDataHandler" parent="." instance=ExtResource("20_4i25o")]

@@ -81,11 +81,11 @@ func update_quest( _title : String, _completed_step : String = "", _is_complete 
 		
 		# Display a notification that quests was updated OR completed
 		if q.is_complete == true:
-			PlayerHud.queue_notification( "Quest Complete!", _title )
+			PlayerHud.queue_notification( "Nhiệm vụ hoàn thành!", _title )
 			disperse_quest_rewards( find_quest_by_title( _title ) )
 			
 		else:
-			PlayerHud.queue_notification( "Quest Updated", _title + ": " + _completed_step )
+			PlayerHud.queue_notification( "Đã cập nhật nhiệm vụ", _title + ": " + _completed_step )
 	pass
 
 
@@ -98,7 +98,7 @@ func disperse_quest_rewards( _q : Quest ) -> void:
 		PlayerManager.INVENTORY_DATA.add_item( i.item, i.quantity )
 		_message += ", " + i.item.name + " x" + str( i.quantity )
 	
-	PlayerHud.queue_notification( "Quest Rewards Received!", _message )
+	PlayerHud.queue_notification( "Đã nhận được phần thưởng nhiệm vụ!", _message )
 	pass
 
 

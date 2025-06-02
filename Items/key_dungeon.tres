@@ -13,5 +13,6 @@ script = ExtResource("2_y1yal")
 name = "Dungeon key"
 description = "A valuable gem!"
 texture = SubResource("AtlasTexture_rhp2r")
+cost = 10
 effects = Array[ExtResource("1_u6d1n")]([])
 metadata/_custom_type_script = "uid://b5cyfss2mkejy"

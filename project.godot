@@ -18,21 +18,25 @@ config/icon="res://icon.svg"
 [autoload]
 
 AudioManager="*res://00_Globals/global_audio_manager.gd"
+EnemyTracker="*res://00_Globals/global_enemy_tracker.gd"
+ItemPickupTracker="*res://00_Globals/global_item_pickup_tracker.gd"
 LevelManager="*res://00_Globals/global_level_manager.gd"
 PlayerHud="*res://GUI/player_hud/player_hud.tscn"
 PlayerManager="*res://00_Globals/global_player_manager.gd"
 SceneTransition="*res://GUI/scene_transition/scene_transition.tscn"
-SaveManager="*res://00_Globals/gloval_save_manager.gd"
+SaveManager="*res://00_Globals/global_save_manager.gd"
 PauseMenu="*res://GUI/pause_menu/pause_menu.tscn"
 DialogSystem="*res://GUI/dialog_system/dialog_system.tscn"
 QuestManager="*res://quests/scripts/global_quest_manager.gd"
 EffectManager="*res://00_Globals/global_effect_manager.gd"
 ShopMenu="*res://GUI/shop_menu/shop_menu.tscn"
+QuestionLoader="*res://00_Globals/global_question_loader.gd"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=360
+window/size/mode=2
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
@@ -92,6 +96,11 @@ interact={
 test={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"location":0,"echo":false,"script":null)
+]
+}
+dash={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

@@ -36,6 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0.516)
 
 [node name="ButtonNew" type="Button" parent="CanvasLayer/Control"]
@@ -69,6 +70,7 @@ grow_vertical = 2
 text = "continue"
 
 [node name="SplashScene" parent="CanvasLayer" instance=ExtResource("8_hlrge")]
+mouse_filter = 2
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_e557l")]
 position = Vector2(240, 139)

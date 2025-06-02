@@ -22,5 +22,6 @@ script = ExtResource("1_jxolx")
 name = "Posion"
 description = "This red drink restores your health!"
 texture = SubResource("AtlasTexture_sxcag")
+cost = 10
 effects = Array[ExtResource("1_sxcag")]([SubResource("Resource_47boy"), null])
 metadata/_custom_type_script = "uid://b5cyfss2mkejy"

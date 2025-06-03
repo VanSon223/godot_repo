@@ -106,6 +106,7 @@ func use_item( item : ItemData, count : int = 1 ) -> bool:
 	for s in slots:
 		if s:
 			if s.item_data == item and s.quantity >= count:
+				apply_item_effects(item) 
 				s.quantity -= count
 				return true
 	return false
@@ -192,3 +193,7 @@ func get_item_held_quantity( _item : ItemData ) -> int:
 				if slot.item_data == _item:
 					return slot.quantity
 	return 0
+func apply_item_effects(item: ItemData) -> void:
+	if item.effects:
+		for effect in item.effects:
+			effect.use()

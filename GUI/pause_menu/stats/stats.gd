@@ -16,7 +16,13 @@ func _ready() -> void:
 	PauseMenu.preview_stats_changed.connect( _on_preview_stats_changed )
 	inventory = PlayerManager.INVENTORY_DATA
 	inventory.equipment_changed.connect( update_stats )
-
+	update_stats() 
+	  # Kết nối signal để tự động cập nhật UI khi chỉ số thay đổi
+	var player = PlayerManager.player
+	if player:
+		player.connect("stats_changed", self.update_stats)
+	 
+	pass
 
 func update_stats() -> void:
 	var _p : Player = PlayerManager.player
@@ -27,8 +33,11 @@ func update_stats() -> void:
 	else:
 		label_xp.text = "MAX LVL"
 	
-	label_attack.text = str( _p.attack + inventory.get_attack_bonus() )
-	label_defense.text = str( _p.defense + inventory.get_defense_bonus() )
+	var total_attack = _p.attack + inventory.get_attack_bonus()
+	label_attack.text = str(total_attack)
+		
+	var total_defense = _p.defense + inventory.get_defense_bonus() + _p.defense_bonus
+	label_defense.text = str(total_defense)
 	pass
 
 

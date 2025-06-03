@@ -4,7 +4,7 @@ class_name Player
 # ======= TÍN HIỆU =======
 signal direction_changed(new_direction: Vector2)
 signal player_damaged(hurt_box: HurtBox)
-
+signal stats_changed
 # ======= HẰNG SỐ =======
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
@@ -137,7 +137,28 @@ func _on_equipment_changed() -> void:
 # ======= ĐỔI SPRITE (ví dụ để thay skin) =======
 func change_sprite() -> void:
 	sprite.texture = load("res://path/to/sprite.png")
+# ======= CẬP NHẬT HIỆU ỨNG =======
+# Buff attack
+func add_attack_buff(amount: int, duration: float) -> void:
+	attack += amount
+	update_damage_values()
+	emit_signal("stats_changed")  # Cập nhật UI
+	await get_tree().create_timer(duration).timeout
+	attack -= amount
+	update_damage_values()
+	emit_signal("stats_changed")  # Cập nhật UI khi buff kết thúc
 
+# Buff defense
+func add_defense_buff(amount: int, duration: float) -> void:
+	defense += amount
+	emit_signal("stats_changed")  # 👈 Gửi tín hiệu cập nhật UI
+	print("🛡️ Defense buff +", amount)
+
+	await get_tree().create_timer(duration).timeout
+
+	defense -= amount
+	emit_signal("stats_changed")  # 👈 Gửi lại khi hết hiệu lực
+	print("❌ Defense buff ended")
 # ======= NHẶT ĐỒ (nếu dùng hệ thống ném/đẩy) =======
 #func pickup_item(_t: Throwable) -> void:
 	#state_machine.change_state(lift)

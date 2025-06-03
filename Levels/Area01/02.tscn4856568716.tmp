@@ -299,7 +299,6 @@ map_name = "02"
 [node name="ItemPickup3" parent="." instance=ExtResource("27_s3up8")]
 position = Vector2(139.77, 146)
 item_data = ExtResource("28_vv7nh")
-item_id = "2"
 map_name = "02"
 
 [node name="ItemPickup4" parent="." instance=ExtResource("27_s3up8")]

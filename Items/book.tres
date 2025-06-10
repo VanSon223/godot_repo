@@ -1,24 +1,22 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=8 format=3 uid="uid://bl7t0ofx7lx11"]
 
-[ext_resource type="Script" uid="uid://dksa1s0kvcxcl" path="res://Items/item_effects/item_effect_buff.gd" id="1_2mt77"]
 [ext_resource type="Script" uid="uid://d0dl16xmrpd66" path="res://Items/item_effects/item_effect.gd" id="1_e04hx"]
 [ext_resource type="Script" uid="uid://b5cyfss2mkejy" path="res://Items/scripts/item_data.gd" id="2_8hbqx"]
+[ext_resource type="Script" uid="uid://dksa1s0kvcxcl" path="res://Items/item_effects/item_effect_buff.gd" id="2_iuq53"]
 [ext_resource type="Texture2D" uid="uid://dh2si8naoqsjm" path="res://Items/sprites/books_byBatuhan.png" id="3_8hbqx"]
 
-[sub_resource type="Resource" id="Resource_iuq53"]
-script = ExtResource("1_2mt77")
+[sub_resource type="Resource" id="Resource_l7mdn"]
+script = ExtResource("2_iuq53")
 buff_type = 0
-amount = 1
-duration = 10.0
-use_discription = ""
+amount = 2
+duration = 90.0
 metadata/_custom_type_script = "uid://dksa1s0kvcxcl"
 
-[sub_resource type="Resource" id="Resource_l7mdn"]
-script = ExtResource("1_2mt77")
+[sub_resource type="Resource" id="Resource_p8ll8"]
+script = ExtResource("2_iuq53")
 buff_type = 1
-amount = 1
-duration = 10.0
-use_discription = ""
+amount = 3
+duration = 90.0
 metadata/_custom_type_script = "uid://dksa1s0kvcxcl"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l7mdn"]
@@ -31,5 +29,5 @@ name = "Book"
 description = "This book will upgrade your damage and defense. but has a time limit."
 texture = SubResource("AtlasTexture_l7mdn")
 cost = 10
-effects = Array[ExtResource("1_e04hx")]([SubResource("Resource_iuq53"), SubResource("Resource_l7mdn")])
+effects = Array[ExtResource("1_e04hx")]([SubResource("Resource_l7mdn"), SubResource("Resource_p8ll8")])
 metadata/_custom_type_script = "uid://b5cyfss2mkejy"

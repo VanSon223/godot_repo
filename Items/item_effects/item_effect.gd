@@ -1,8 +1,5 @@
-class_name ItemEffect extends Resource
+extends Resource
+class_name ItemEffect
 
-@export var use_discription : String
-
-
-func use()-> void:
-	
+func use() -> void:
 	pass

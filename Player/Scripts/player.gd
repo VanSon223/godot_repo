@@ -142,7 +142,8 @@ func change_sprite() -> void:
 func add_attack_buff(amount: int, duration: float) -> void:
 	attack += amount
 	update_damage_values()
-	emit_signal("stats_changed")  # Cập nhật UI
+	emit_signal("stats_changed") 
+	print(" Attack buff +", amount) # Cập nhật UI
 	await get_tree().create_timer(duration).timeout
 	attack -= amount
 	update_damage_values()
@@ -151,14 +152,28 @@ func add_attack_buff(amount: int, duration: float) -> void:
 # Buff defense
 func add_defense_buff(amount: int, duration: float) -> void:
 	defense += amount
-	emit_signal("stats_changed")  # 👈 Gửi tín hiệu cập nhật UI
-	print("🛡️ Defense buff +", amount)
+	emit_signal("stats_changed")  #  Gửi tín hiệu cập nhật UI
+	print(" Defense buff +", amount)
 
 	await get_tree().create_timer(duration).timeout
 
 	defense -= amount
-	emit_signal("stats_changed")  # 👈 Gửi lại khi hết hiệu lực
-	print("❌ Defense buff ended")
+	emit_signal("stats_changed")  #  Gửi lại khi hết hiệu lực
+	print(" Defense buff ended")
+
+# Tăng attack vĩnh viễn (không hết hạn)
+func increase_attack_permanent(amount: int) -> void:
+	attack += amount
+	update_damage_values()
+	emit_signal("stats_changed")
+	print(" Attack buff + ", amount)
+
+# Tăng defense vĩnh viễn (không hết hạn)
+func increase_defense_permanent(amount: int) -> void:
+	defense += amount
+	emit_signal("stats_changed")
+	print(" Defense buff + ", amount)
+
 # ======= NHẶT ĐỒ (nếu dùng hệ thống ném/đẩy) =======
 #func pickup_item(_t: Throwable) -> void:
 	#state_machine.change_state(lift)

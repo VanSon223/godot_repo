@@ -6,7 +6,7 @@ enum BuffType { ATTACK, DEFENSE }
 
 @export var buff_type: BuffType = BuffType.ATTACK
 @export var amount: int = 1
-@export var duration: float = 10.0 # giây
+@export var duration: float = 90.0 # giây
 @export var audio: AudioStream
 
 func use() -> void:

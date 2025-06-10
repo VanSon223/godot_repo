@@ -4,6 +4,7 @@ signal quiz_answered(correct: bool)
 
 var current_question: Question
 
+@onready var result_label = $PanelContainer/Panel/ResultLabel
 @onready var label = $PanelContainer/Panel/Label
 @onready var lang_label = $PanelContainer/Panel/LanguageLabel
 @onready var buttons := [
@@ -41,20 +42,29 @@ func set_question(question: Question) -> void:
 		push_error("Không tìm thấy Label để hiển thị ngôn ngữ ở $Panel/LanguageLabel")
 
 	for i in range(buttons.size()):
+		var btn = buttons[i]
 		if i < question.choices.size():
-			var btn = buttons[i]
 			btn.set_answer_text(question.choices[i])
 			btn.visible = true
 
-			# Ngắt tất cả kết nối cũ
+			# Ngắt kết nối cũ (nếu có)
 			for conn in btn.pressed.get_connections():
 				btn.pressed.disconnect(conn.callable)
 
-			var index := i
-			btn.pressed.connect(func():
-				var is_correct = (index == question.correct_index)
-				emit_signal("quiz_answered", is_correct)
-				queue_free()
-			)
+			# Kết nối tới hàm riêng với chỉ số câu trả lời
+			btn.pressed.connect(_on_button_pressed.bind(i))
 		else:
-			buttons[i].visible = false
+			btn.visible = false
+
+func _on_button_pressed(index: int) -> void:
+	var is_correct = (index == current_question.correct_index)
+	print("Button pressed: index =", index, ", correct =", is_correct)
+
+	emit_signal("quiz_answered", is_correct)
+
+	if result_label:
+		result_label.text = "*Đúng rồi!*" if is_correct else "*Sai rồi!*"
+		result_label.visible = true
+
+	await get_tree().create_timer(0.5).timeout
+	queue_free()

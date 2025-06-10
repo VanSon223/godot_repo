@@ -146,12 +146,6 @@
 	"language": "Java"
   },
   {
-	"question_text": "How do you define a method in Java?",
-	"choices": ["def methodName()", "void methodName()", "function methodName()", "method methodName()"],
-	"correct_index": 1,
-	"language": "Java"
-  },
-  {
 	"question_text": "Which keyword is used to inherit a class in Java?",
 	"choices": ["extends", "implements", "inherits", "derives"],
 	"correct_index": 0,
@@ -189,12 +183,6 @@
 	"language": "C++"
   },
   {
-	"question_text": "How do you declare a constant variable in C++?",
-	"choices": ["constant int x = 5;", "const int x = 5;", "final int x = 5;", "#define x 5"],
-	"correct_index": 1,
-	"language": "C++"
-  },
-  {
 	"question_text": "Which keyword is used to create a class in C++?",
 	"choices": ["class", "struct", "object", "module"],
 	"correct_index": 0,
@@ -225,18 +213,7 @@
 	"correct_index": 1,
 	"language": "Python"
   },
-  {
-	"question_text": "What is the syntax to define a function in Python?",
-	"choices": ["def function_name():", "function function_name()", "void function_name()", "fun function_name()"],
-	"correct_index": 0,
-	"language": "Python"
-  },
-  {
-	"question_text": "How do you write a for loop from 0 to 4 in Python?",
-	"choices": ["for i in range(5):", "for (i=0; i<5; i++)", "foreach i in 5", "for i = 1 to 5"],
-	"correct_index": 0,
-	"language": "Python"
-  },
+
   {
 	"question_text": "Which keyword is used to handle exceptions in Python?",
 	"choices": ["catch", "try", "except", "handle"],
@@ -259,12 +236,6 @@
   {
 	"question_text": "What is the correct way to declare a class in Java?",
 	"choices": ["class MyClass {}", "def MyClass:", "function MyClass()", "module MyClass {}"],
-	"correct_index": 0,
-	"language": "Java"
-  },
-  {
-	"question_text": "How do you create an object of MyClass in Java?",
-	"choices": ["MyClass obj = new MyClass();", "obj = MyClass();", "new MyClass obj;", "MyClass obj();"],
 	"correct_index": 0,
 	"language": "Java"
   },

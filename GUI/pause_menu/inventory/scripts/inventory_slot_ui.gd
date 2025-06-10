@@ -58,23 +58,44 @@ func item_unfocused() -> void:
 
 
 func item_pressed() -> void:
-	if slot_data and outside_drag_threshold() == false:
-		if slot_data.item_data:
-			var item = slot_data.item_data
-			
-			if item is EquipableItemData:
-				PlayerManager.INVENTORY_DATA.equip_item( slot_data )
-				return
-			
-			var was_used = item.use()
-			if was_used == false:
-				return
-			slot_data.quantity -= 1
-			
-			if slot_data == null:
-				return
-			label.text = str( slot_data.quantity )
+	if slot_data == null or slot_data.item_data == null or outside_drag_threshold():
+		return
 
+	var item = slot_data.item_data
+
+	if item is EquipableItemData:
+		PlayerManager.INVENTORY_DATA.equip_item(slot_data)
+		return
+
+	# Gán parent node cho từng effect
+	item.set_parent_node(self)
+
+	# Nếu có effect cần đợi xử lý (Quiz)
+	if item.effects.size() > 0 and item.effects[0] is ItemEffectQuizBuff:
+		var effect = item.effects[0] as ItemEffectQuizBuff
+		effect.effect_finished.connect(_on_effect_finished)
+		item.use()
+	else:
+		# Dùng ngay nếu không phải quiz
+		var was_used = item.use()
+		if was_used:
+			consume_item()
+
+func _on_effect_finished(_success: bool) -> void:
+	consume_item()
+
+func consume_item() -> void:
+	if slot_data != null:
+		slot_data.quantity -= 1
+		_update_slot_ui()
+
+func _update_slot_ui() -> void:
+	if slot_data == null or slot_data.quantity <= 0:
+		slot_data = null
+		texture_rect.texture = null
+		label.text = ""
+	else:
+		label.text = str(slot_data.quantity)
 
 func on_button_down() -> void:
 	click_pos = get_global_mouse_position()

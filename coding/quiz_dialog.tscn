@@ -39,6 +39,15 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_tbdmk")
 [node name="Panel" type="Control" parent="PanelContainer"]
 layout_mode = 2
 
+[node name="ResultLabel" type="Label" parent="PanelContainer/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 292.0
+offset_top = 4.0
+offset_right = 413.0
+offset_bottom = 22.0
+text = "true & flase"
+
 [node name="Label" type="Label" parent="PanelContainer/Panel"]
 layout_mode = 0
 offset_left = 26.0

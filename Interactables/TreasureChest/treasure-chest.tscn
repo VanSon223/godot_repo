@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://4vkd3cgitois"]
+[gd_scene load_steps=15 format=3 uid="uid://4vkd3cgitois"]
 
 [ext_resource type="Script" uid="uid://b3on7ev21a03q" path="res://Interactables/TreasureChest/treasure_chest.gd" id="1_e0gtp"]
 [ext_resource type="Texture2D" uid="uid://cxakfxmuyw1ls" path="res://Interactables/TreasureChest/treasure-chest.png" id="2_km1n8"]
 [ext_resource type="Texture2D" uid="uid://bmjan6873e3h5" path="res://Items/sprites/items.png" id="3_dhxp7"]
+[ext_resource type="FontFile" uid="uid://cnrqk38ddqqwy" path="res://GUI/fonts/m5x7.ttf" id="4_5pojo"]
 [ext_resource type="AudioStream" uid="uid://bbi6ggrxyka2n" path="res://Interactables/TreasureChest/treasure-open.wav" id="4_km1n8"]
 [ext_resource type="PackedScene" uid="uid://2o4ift7dsair" path="res://GeneralNodes/PersistentDataHandler/persistent-data-handler.tscn" id="5_dhxp7"]
 
@@ -221,7 +222,7 @@ offset_right = 58.0
 offset_bottom = 16.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
-theme_override_font_sizes/font_size = 10
+theme_override_fonts/font = ExtResource("4_5pojo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -31,6 +31,7 @@ QuestManager="*res://quests/scripts/global_quest_manager.gd"
 EffectManager="*res://00_Globals/global_effect_manager.gd"
 ShopMenu="*res://GUI/shop_menu/shop_menu.tscn"
 QuestionLoader="*res://00_Globals/global_question_loader.gd"
+QuizHandler="*res://00_Globals/quiz_handler.gd"
 
 [display]
 

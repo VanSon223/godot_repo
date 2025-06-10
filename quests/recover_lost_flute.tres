@@ -17,8 +17,8 @@ quantity = 5
 
 [resource]
 script = ExtResource("2_knyee")
-title = "Tìm cây sáo ma thuật bị mất"
-description = "Cam đã giao cho người anh hùng nhiệm vụ tìm lại cây sáo ma thuật bị mất của mình từ ngục tối."
-steps = Array[String](["Tìm lối vào hang động", "Tìm cây sáo thần kỳ", "Trả lại cây sáo ma thuật cho Cam"])
-reward_xp = 100
+title = "Recover Lost Magical Flute"
+description = "Cam  has tasked the hero with retreiveing his lost magical flute from the dark dungeon."
+steps = Array[String](["Find the Cave Entrance", "Find the Magical Flute", "Return Magical Flute to Nero"])
+reward_xp = 20
 reward_items = Array[ExtResource("1_vowv8")]([SubResource("Resource_slc1x"), SubResource("Resource_cvh1b")])

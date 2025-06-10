@@ -69,15 +69,17 @@ func player_interact() -> void:
 
 func _on_quiz_answered(correct: bool) -> void:
 	if correct:
-		print("✅ Trả lời đúng! Nhận vật phẩm.")
+		print(" Trả lời đúng! Nhận vật phẩm.")
 		PlayerManager.INVENTORY_DATA.add_item(item_data, quantity)
 
-		# ✅ Chỉ mở rương nếu trả lời đúng
+		#  Chỉ mở rương nếu trả lời đúng
 		is_open = true
 		is_open_data.set_value()
+		await get_tree().create_timer(1.0).timeout
 		animation_player.play("open_chest")
+		
 	else:
-		print("❌ Trả lời sai! Không có phần thưởng.")
+		print(" Trả lời sai! Không có phần thưởng.")
 		
 func _on_quiz_closed(_correct: bool) -> void:
 	# Khi dialog đóng hoặc trả lời xong, reset trạng thái

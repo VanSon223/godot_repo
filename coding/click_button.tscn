@@ -11,8 +11,8 @@ corner_radius_bottom_left = 6
 [node name="ClickButton" type="Button"]
 custom_minimum_size = Vector2(100, 36)
 offset_top = 1.0
-offset_right = 100.0
-offset_bottom = 37.0
+offset_right = 149.0
+offset_bottom = 45.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_atn60")
 script = ExtResource("1_atn60")
 
@@ -20,8 +20,9 @@ script = ExtResource("1_atn60")
 layout_mode = 0
 offset_left = 3.0
 offset_top = 10.0
-offset_right = 98.0
-offset_bottom = 28.0
+offset_right = 142.0
+offset_bottom = 39.0
 text = "Label "
+autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 3

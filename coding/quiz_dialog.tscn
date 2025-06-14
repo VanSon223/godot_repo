@@ -63,21 +63,21 @@ offset_right = 40.0
 offset_bottom = 18.0
 text = "Ngôn ngữ"
 
-[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/Panel"]
+[node name="HBoxContainer" type="VBoxContainer" parent="PanelContainer/Panel"]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 218.0
-offset_right = 428.0
-offset_bottom = 254.0
+offset_left = -3.0
+offset_top = 182.0
+offset_right = 253.0
+offset_bottom = 338.0
 
-[node name="ClickButton" parent="PanelContainer/Panel/VBoxContainer" instance=ExtResource("2_3dfn2")]
+[node name="ClickButton" parent="PanelContainer/Panel/HBoxContainer" instance=ExtResource("2_3dfn2")]
 layout_mode = 2
 
-[node name="ClickButton2" parent="PanelContainer/Panel/VBoxContainer" instance=ExtResource("2_3dfn2")]
+[node name="ClickButton2" parent="PanelContainer/Panel/HBoxContainer" instance=ExtResource("2_3dfn2")]
 layout_mode = 2
 
-[node name="ClickButton3" parent="PanelContainer/Panel/VBoxContainer" instance=ExtResource("2_3dfn2")]
+[node name="ClickButton3" parent="PanelContainer/Panel/HBoxContainer" instance=ExtResource("2_3dfn2")]
 layout_mode = 2
 
-[node name="ClickButton4" parent="PanelContainer/Panel/VBoxContainer" instance=ExtResource("2_3dfn2")]
+[node name="ClickButton4" parent="PanelContainer/Panel/HBoxContainer" instance=ExtResource("2_3dfn2")]
 layout_mode = 2

@@ -18,7 +18,7 @@ region = Rect2(32, 32, 32, 32)
 [resource]
 script = ExtResource("3_602ib")
 name = "BookDefense"
-description = "This book will upgrade your damage and defense. but has a time limit."
+description = "This book will permanently increase your  defense, but you must answer questions about the code."
 texture = SubResource("AtlasTexture_l7mdn")
 cost = 10
 effects = Array[ExtResource("1_v18bb")]([SubResource("Resource_602ib")])

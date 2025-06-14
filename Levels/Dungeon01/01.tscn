@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://hnytdj33wmrj"]
+[gd_scene load_steps=12 format=4 uid="uid://hnytdj33wmrj"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_p8h4r"]
 [ext_resource type="PackedScene" uid="uid://dbq5jxaq8oxct" path="res://Tile Maps/dungeon_tiles_01.tscn" id="3_bpaqg"]
@@ -10,8 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://cwby8egx8vwx2" path="res://quests/utility_nodes/quest_activated_switch.tscn" id="6_rsdf3"]
 [ext_resource type="PackedScene" uid="uid://b4jqibhvnwmda" path="res://Interactables/Dungeon/pushable_statue.tscn" id="7_6thod"]
 [ext_resource type="Resource" uid="uid://cvnr3a38pmudn" path="res://quests/recover_lost_flute.tres" id="7_cweoc"]
+[ext_resource type="PackedScene" uid="uid://bq4bq6wx28u45" path="res://Enemies/Goblin/goblin.tscn" id="11_54q72"]
 
-[node name="01" type="Node2D"]
+[node name="01_D" type="Node2D"]
 script = ExtResource("1_p8h4r")
 
 [node name="Dungeon Tiles 01" parent="." instance=ExtResource("3_bpaqg")]
@@ -61,6 +62,14 @@ position = Vector2(224, 55)
 position = Vector2(320, 113)
 persistent = true
 persistent_location = Vector2(191, 114)
+
+[node name="Goblin" parent="." instance=ExtResource("11_54q72")]
+position = Vector2(320, 77)
+scale = Vector2(1, 1)
+hp = 20
+xp_reward = 5
+enemy_id = "1"
+map_name = "01_D"
 
 [connection signal="entered_from_here" from="LevelTransition" to="LevelTransition/QuestActivatedSwitch/QuestAdvanceTrigger" method="advance_quest"]
 [connection signal="activated" from="PressurePlate" to="BarredDoor" method="open_door"]

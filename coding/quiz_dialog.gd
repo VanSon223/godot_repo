@@ -8,10 +8,10 @@ var current_question: Question
 @onready var label = $PanelContainer/Panel/Label
 @onready var lang_label = $PanelContainer/Panel/LanguageLabel
 @onready var buttons := [
-	$PanelContainer/Panel/VBoxContainer/ClickButton,
-	$PanelContainer/Panel/VBoxContainer/ClickButton2,
-	$PanelContainer/Panel/VBoxContainer/ClickButton3,
-	$PanelContainer/Panel/VBoxContainer/ClickButton4
+	$PanelContainer/Panel/HBoxContainer/ClickButton,
+	$PanelContainer/Panel/HBoxContainer/ClickButton2,
+	$PanelContainer/Panel/HBoxContainer/ClickButton3,
+	$PanelContainer/Panel/HBoxContainer/ClickButton4
 ]
 
 var ready_called := false

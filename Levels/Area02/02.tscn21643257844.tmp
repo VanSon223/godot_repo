@@ -1,7 +1,7 @@
-[gd_scene load_steps=33 format=4 uid="uid://chcb2oelfl72f"]
+[gd_scene load_steps=31 format=4 uid="uid://chcb2oelfl72f"]
 
 [ext_resource type="Script" uid="uid://d2eyblbal755o" path="res://Levels/scripts/level.gd" id="1_1ohot"]
-[ext_resource type="AudioStream" uid="uid://o7oguxjubd4w" path="res://Levels/music/game-music-loop-6-144641.ogg" id="2_vv7nh"]
+[ext_resource type="AudioStream" uid="uid://io7jxqk648xa" path="res://Levels/music/example_music_01.ogg" id="2_5s7x6"]
 [ext_resource type="PackedScene" uid="uid://cq32mohonpsw3" path="res://Tile Maps/grass-tiles-01.tscn" id="3_ukscd"]
 [ext_resource type="PackedScene" uid="uid://dr4blo7ya448q" path="res://Levels/player_spawn.tscn" id="4_1fp1i"]
 [ext_resource type="PackedScene" uid="uid://dirn6xxuawm3y" path="res://Tile Maps/shop_tilemap_layer.tscn" id="4_348be"]
@@ -26,9 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://bthxn7pwhv6p" path="res://Items/item_pickup/item_pickup.tscn" id="27_s3up8"]
 [ext_resource type="PackedScene" uid="uid://4vkd3cgitois" path="res://Interactables/TreasureChest/treasure-chest.tscn" id="27_w21e7"]
 [ext_resource type="Resource" uid="uid://j3ajhw1go5jq" path="res://Items/gem.tres" id="28_dffud"]
-[ext_resource type="Resource" uid="uid://bfhf2i8cpqjaq" path="res://Items/bookattack.tres" id="28_s3up8"]
-[ext_resource type="Resource" uid="uid://bl7t0ofx7lx11" path="res://Items/book.tres" id="28_vv7nh"]
-[ext_resource type="Resource" uid="uid://c5s1vc42e17cv" path="res://Items/bookdefense.tres" id="30_dffud"]
+[ext_resource type="Resource" uid="uid://cjw8d2utml0su" path="res://Items/stone.tres" id="30_gm670"]
 [ext_resource type="Resource" uid="uid://bdjovqkj4pdvb" path="res://Items/apple.tres" id="31_fw76p"]
 [ext_resource type="PackedScene" uid="uid://c3jxeaoir0gwq" path="res://Props/pot/pot.tscn" id="31_s3up8"]
 
@@ -50,7 +48,7 @@ func quest_complete() -> void:
 [node name="02" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_1ohot")
-music = ExtResource("2_vv7nh")
+music = ExtResource("2_5s7x6")
 
 [node name="grass-tiles-01" parent="." instance=ExtResource("3_ukscd")]
 tile_map_data = PackedByteArray("AAD9//7/AAACAAQAAAD9////AAACAAUAAAD9/wAAAAACAAYAAAD9/wEAAAANAAQAAAD9/wIAAAANAAUAAAD9/wMAAAANAAUAAAD9/wQAAAANAAUAAAD9/wUAAAANAAUAAAD9/wYAAAANAAUAAAD9/wcAAAANAAUAAAD9/wgAAAANAAUAAAD9/wkAAAANAAUAAAD+//7/AAADAAQAAAD+////AAADAAUAAAD+/wAAAAADAAYAAAD+/wEAAAAOAAQAAAD+/wIAAAAOAAUAAAD+/wMAAAAOAAUAAAD+/wQAAAAOAAUAAAD+/wUAAAAOAAUAAAD+/wYAAAAOAAUAAAD+/wcAAAAOAAUAAAD+/wgAAAAOAAUAAAD+/wkAAAAOAAUAAAD///7/AAAEAAQAAAD/////AAAEAAUAAAD//wAAAAAEAAYAAAD//wEAAAACAAAAAAD//wIAAAACAAAAAAD//wMAAAACAAAAAAD//wQAAAACAAAAAAD//wUAAAAAAAIAAAD//wYAAAAAAAAAAAD//wcAAAAAAAMAAAD//wgAAAAAAAAAAAD//wkAAAAKAAQAAAAAAP7/AAAEAAQAAAAAAP//AAAEAAUAAAAAAAAAAAAEAAYAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAMAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAACAAEAAAAAAAYAAAABAAMAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAIAAAAAAAkAAAAMAAQAAAABAP7/AAACAAQAAAABAP//AAACAAUAAAABAAAAAAACAAYAAAABAAEAAAABAAAAAAABAAIAAAABAAIAAAABAAMAAAABAAAAAAABAAQAAAAFAAAAAAABAAUAAAAEAAEAAAABAAYAAAAEAAIAAAABAAcAAAACAAEAAAABAAgAAAABAAIAAAABAAkAAAANAAQAAAACAP7/AAADAAQAAAACAP//AAADAAUAAAACAAAAAAADAAYAAAACAAEAAAABAAMAAAACAAIAAAABAAEAAAACAAMAAAACAAAAAAACAAQAAAAGAAMAAAACAAUAAAACAAAAAAACAAYAAAABAAEAAAACAAcAAAAFAAMAAAACAAgAAAAAAAMAAAACAAkAAAALAAQAAAADAP7/AAAEAAQAAAADAP//AAAEAAUAAAADAAAAAAAEAAYAAAADAAEAAAAAAAEAAAADAAIAAAAAAAIAAAADAAMAAAADAAAAAAADAAQAAAAGAAMAAAADAAUAAAADAAAAAAADAAYAAAADAAAAAAADAAcAAAAGAAMAAAADAAgAAAABAAEAAAADAAkAAAAMAAQAAAAEAP7/AAACAAQAAAAEAP//AAADAAUAAAAEAAAAAAANAAcAAAAEAAEAAAAAAAAAAAAEAAIAAAABAAIAAAAEAAMAAAAAAAAAAAAEAAQAAAAGAAMAAAAEAAUAAAAAAAAAAAAEAAYAAAAEAAAAAAAEAAcAAAAHAAIAAAAEAAgAAAAAAAEAAAAEAAkAAAANAAQAAAAFAP7/AAAOAAYAAAAFAP//AAAJAAcAAAAFAAAAAAAOAAcAAAAFAAEAAAABAAAAAAAFAAIAAAAAAAMAAAAFAAMAAAAAAAIAAAAFAAQAAAAGAAMAAAAFAAUAAAABAAAAAAAFAAYAAAABAAAAAAAFAAcAAAABAAAAAAAFAAgAAAAAAAEAAAAFAAkAAAALAAQAAAAGAP7/AAAMAAEAAAAGAP//AAAMAAEAAAAGAAAAAAAMAAEAAAAGAAEAAAAMAAMAAAAGAAIAAAACAAAAAAAGAAMAAAACAAAAAAAGAAQAAAAGAAMAAAAGAAUAAAACAAAAAAAGAAYAAAACAAAAAAAGAAcAAAACAAAAAAAGAAgAAAAAAAIAAAAGAAkAAAAMAAQAAAAHAP7/AAAPAAIAAAAHAP//AAAPAAIAAAAHAAAAAAAPAAIAAAAHAAEAAAALAAIAAAAHAAIAAAAEAAEAAAAHAAMAAAAIAAEAAAAHAAQAAAAJAAMAAAAHAAUAAAADAAAAAAAHAAYAAAADAAAAAAAHAAcAAAAAAAAAAAAHAAgAAAAAAAIAAAAHAAkAAAANAAQAAAAIAAIAAAAAAAAAAAAIAAMAAAAPAAAAAAAIAAQAAAAOAAIAAAAIAAUAAAAMAAMAAAAIAAYAAAAAAAAAAAAIAAcAAAABAAIAAAAIAAgAAAAAAAAAAAAIAAkAAAALAAQAAAAJAAQAAAAKAAAAAAAJAAUAAAALAAIAAAAJAAYAAAAFAAIAAAAJAAcAAAAAAAIAAAAJAAgAAAABAAAAAAAJAAkAAAAMAAQAAAAKAAQAAAAHAAMAAAAKAAUAAAACAAAAAAAKAAYAAAAGAAMAAAAKAAcAAAAAAAIAAAAKAAgAAAACAAAAAAAKAAkAAAANAAQAAAALAAQAAAADAAAAAAALAAUAAAADAAAAAAALAAYAAAAGAAMAAAALAAcAAAABAAEAAAALAAgAAAABAAAAAAALAAkAAAALAAQAAAAMAAQAAAAIAAIAAAAMAAUAAAAEAAEAAAAMAAYAAAAHAAIAAAAMAAcAAAAAAAAAAAAMAAgAAAABAAIAAAAMAAkAAAAMAAQAAAANAAQAAAAPAAMAAAANAAUAAAABAAAAAAANAAYAAAABAAAAAAANAAcAAAABAAAAAAANAAgAAAABAAAAAAANAAkAAAAOAAQAAAAOAAQAAAAKAAQAAAAOAAUAAAAKAAUAAAAOAAYAAAAKAAUAAAAOAAcAAAAKAAUAAAAOAAgAAAAKAAUAAAAOAAkAAAAKAAUAAAAPAAQAAAALAAQAAAAPAAUAAAALAAUAAAAPAAYAAAALAAUAAAAPAAcAAAALAAUAAAAPAAgAAAALAAUAAAAPAAkAAAALAAUAAAAIAP7/AAAKAAYAAAAIAP//AAAJAAYAAAAIAAAAAAAKAAcAAAAIAAEAAAAAAAAAAAAJAP7/AAAEAAQAAAAJAP//AAAEAAUAAAAJAAAAAAALAAcAAAAJAAEAAAABAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAAAAAAKAP7/AAACAAQAAAAKAP//AAACAAUAAAAKAAAAAAACAAYAAAAKAAEAAAACAAAAAAAKAAIAAAAFAAMAAAAKAAMAAAACAAAAAAALAP7/AAADAAQAAAALAP//AAADAAUAAAALAAAAAAADAAYAAAALAAEAAAADAAAAAAALAAIAAAAGAAMAAAALAAMAAAADAAAAAAAMAP7/AAAEAAQAAAAMAP//AAAEAAUAAAAMAAAAAAAEAAYAAAAMAAEAAAAAAAAAAAAMAAIAAAAHAAAAAAAMAAMAAAAIAAEAAAANAP7/AAACAAQAAAANAP//AAACAAUAAAANAAAAAAACAAYAAAANAAEAAAABAAAAAAANAAIAAAABAAAAAAANAAMAAAAPAAAAAAAOAP7/AAADAAQAAAAOAP//AAADAAUAAAAOAAAAAAADAAYAAAAPAP7/AAAEAAQAAAAPAP//AAAEAAUAAAAPAAAAAAAEAAYAAAAOAAEAAAAAAAAAAAAOAAIAAAAAAAEAAAAOAAMAAAAAAAIAAAAPAAEAAAAKAAQAAAAPAAIAAAAKAAYAAAAPAAMAAAAKAAcAAAA=")
@@ -60,7 +58,7 @@ tile_map_data = PackedByteArray("AAAIAP7/AAAKAAoAAAAIAP//AAAKAAoAAAAIAAAAAAAKAAo
 update_bounds = false
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("4_1fp1i")]
-position = Vector2(139, 272)
+position = Vector2(181, 217)
 
 [node name="Plant" parent="." instance=ExtResource("5_wa4h8")]
 position = Vector2(11, 64)
@@ -166,9 +164,9 @@ Checking if player has quest"
 
 [node name="DialogText" type="Node" parent="NPC_CAM/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("11_ufet7")
-text = "Yo! Hero! Will you help retreive my
-magical flute from the dark dungeon?
-Please, pretty please?"
+text = "Yo! Anh hùng! Anh có thể giúp tôi lấy lại
+cây sáo ma thuật từ ngục tối không?
+Làm ơn, làm ơn đi mà?"
 npc_info = ExtResource("8_yuemd")
 
 [node name="DialogChoice" type="Node" parent="NPC_CAM/QuestActivatedSwitch/DialogInteraction"]
@@ -177,36 +175,36 @@ npc_info = ExtResource("8_yuemd")
 
 [node name="DialogBranch" type="Node" parent="NPC_CAM/QuestActivatedSwitch/DialogInteraction/DialogChoice"]
 script = ExtResource("17_lam8a")
-text = " You can count on it!"
+text = "Bạn có thể tin vào điều đó!"
 npc_info = ExtResource("8_yuemd")
 
 [node name="QuestAdvanceTrigger" parent="NPC_CAM/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch" instance=ExtResource("20_mgke4")]
 position = Vector2(331, 171)
 signal_name = "selected"
 linked_quest = ExtResource("19_2koiu")
-settings_summary = "UPDATE QUEST:
-Quest: Recover Lost Magical Flute
-Step: 0 - N/A
-Complete: false"
+settings_summary = "CẬP NHẬT NHIỆM VỤ:
+Nhiệm vụ: Phục hồi Sáo ma thuật đã mất
+Bước: 0 - N/A
+Hoàn thành: sai"
 
 [node name="DialogText" type="Node" parent="NPC_CAM/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("11_ufet7")
-text = "Thank you dear hero! You are a true specimen!"
+text = "Cảm ơn anh hùng đáng kính! Anh đúng là một mẫu người lý tưởng!"
 npc_info = ExtResource("8_yuemd")
 
 [node name="DialogText2" type="Node" parent="NPC_CAM/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("11_ufet7")
-text = "Oh, and be careful of the evil wizard who lurks in the dungeon!"
+text = "Ồ, và hãy cẩn thận với tên phù thủy độc ác ẩn núp trong ngục tối!"
 npc_info = ExtResource("8_yuemd")
 
 [node name="DialogBranch2" type="Node" parent="NPC_CAM/QuestActivatedSwitch/DialogInteraction/DialogChoice"]
 script = ExtResource("17_lam8a")
-text = "NO! You're crazy bananas!"
+text = "KHÔNG! Các người điên rồi!"
 npc_info = ExtResource("8_yuemd")
 
 [node name="DialogText" type="Node" parent="NPC_CAM/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("11_ufet7")
-text = "Geez! Some lousy hero you are...."
+text = "Trời ơi! Anh đúng là anh hùng tồi tệ..."
 npc_info = ExtResource("8_yuemd")
 
 [node name="QuestActivatedSwitch3" type="Node2D" parent="NPC_CAM"]
@@ -216,17 +214,17 @@ remove_when_activated = true
 react_to_global_signal = true
 linked_quest = ExtResource("19_2koiu")
 quest_complete = true
-settings_summary = "UPDATE QUEST:
-Quest: Recover Lost Magical Flute
-Checking if quest is complete"
+settings_summary = "CẬP NHẬT NHIỆM VỤ:
+Nhiệm vụ: Phục hồi Sáo ma thuật đã mất
+Kiểm tra xem nhiệm vụ đã hoàn thành chưa"
 
 [node name="QuestActivatedSwitch2" parent="NPC_CAM/QuestActivatedSwitch3" instance=ExtResource("23_vtf5b")]
 position = Vector2(0, -18)
 react_to_global_signal = true
 linked_quest = ExtResource("19_2koiu")
-settings_summary = "UPDATE QUEST:
-Quest: Recover Lost Magical Flute
-Checking if player has quest"
+settings_summary = "CẬP NHẬT NHIỆM VỤ:
+Nhiệm vụ: Phục hồi Sáo ma thuật đã mất
+Kiểm tra xem người chơi có nhiệm vụ không"
 
 [node name="QuestActivatedSwitch2" parent="NPC_CAM/QuestActivatedSwitch3/QuestActivatedSwitch2" instance=ExtResource("23_vtf5b")]
 check_type = 2
@@ -234,15 +232,15 @@ remove_when_activated = true
 react_to_global_signal = true
 linked_quest = ExtResource("19_2koiu")
 quest_step = 3
-settings_summary = "UPDATE QUEST:
-Quest: Recover Lost Magical Flute
-Check if player is on step: return magical flute to Cam"
+settings_summary = "CẬP NHẬT NHIỆM VỤ:
+Nhiệm vụ: Phục hồi Sáo ma thuật đã mất
+Kiểm tra xem người chơi có đang ở bước không: trả lại sáo ma thuật cho Cam"
 
 [node name="DialogInteraction" parent="NPC_CAM/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch2" instance=ExtResource("10_s1pmn")]
 
 [node name="DialogText" type="Node" parent="NPC_CAM/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch2/DialogInteraction"]
 script = ExtResource("11_ufet7")
-text = "Thank you Hero! I lost my flute in the cave to the north."
+text = "Cảm ơn anh hùng! Tôi bị mất cây sáo ở hang động phía bắc."
 npc_info = ExtResource("8_yuemd")
 
 [node name="QuestActivatedSwitch" parent="NPC_CAM/QuestActivatedSwitch3/QuestActivatedSwitch2" instance=ExtResource("23_vtf5b")]
@@ -259,8 +257,8 @@ Kiểm tra xem người chơi có đang ở bước không: trả lại sáo ma 
 
 [node name="DialogText" type="Node" parent="NPC_CAM/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch/DialogInteraction2"]
 script = ExtResource("11_ufet7")
-text = "Wow you found my flute!
-It's not much, but here's a reward!"
+text = "Wow bạn tìm thấy cây sáo của tôi rồi!
+Không có gì nhiều, nhưng đây là phần thưởng!"
 npc_info = ExtResource("8_yuemd")
 
 [node name="QuestAdvanceTrigger" parent="NPC_CAM/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch/DialogInteraction2" instance=ExtResource("20_mgke4")]
@@ -268,10 +266,10 @@ signal_name = "finished"
 linked_quest = ExtResource("19_2koiu")
 quest_step = 3
 quest_complete = true
-settings_summary = "UPDATE QUEST:
-Quest: Recover Lost Magical Flute
-Step: 3 - return magical flute to nero
-Complete: true"
+settings_summary = "CẬP NHẬT NHIỆM VỤ:
+Nhiệm vụ: Phục hồi Sáo ma thuật đã mất
+Bước: 3 - trả lại sáo ma thuật cho Cam
+Hoàn thành: đúng"
 
 [node name="Node" type="Node" parent="NPC_CAM/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch/DialogInteraction2/QuestAdvanceTrigger"]
 script = SubResource("GDScript_ootk3")
@@ -287,30 +285,29 @@ id = "pot2"
 map_name = "02"
 
 [node name="Treasure-chest" parent="." instance=ExtResource("27_w21e7")]
-position = Vector2(179, 247)
+position = Vector2(111, 63)
 item_data = ExtResource("28_dffud")
 quantity = 100
 
 [node name="ItemPickup" parent="." instance=ExtResource("27_s3up8")]
 position = Vector2(126, 113)
-item_data = ExtResource("28_s3up8")
+item_data = ExtResource("28_dffud")
 item_id = "1"
 map_name = "02"
 
 [node name="ItemPickup3" parent="." instance=ExtResource("27_s3up8")]
-position = Vector2(140, 135)
-item_data = ExtResource("28_vv7nh")
-item_id = "2"
+position = Vector2(139.77, 146)
+item_data = ExtResource("28_dffud")
 map_name = "02"
 
 [node name="ItemPickup4" parent="." instance=ExtResource("27_s3up8")]
 position = Vector2(158, 105)
-item_data = ExtResource("30_dffud")
+item_data = ExtResource("30_gm670")
 item_id = "3"
 map_name = "02"
 
 [node name="ItemPickup2" parent="." instance=ExtResource("27_s3up8")]
-position = Vector2(166, 135)
+position = Vector2(158, 133)
 item_data = ExtResource("31_fw76p")
 item_id = "4"
 map_name = "02"

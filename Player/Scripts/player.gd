@@ -23,7 +23,6 @@ var attack: int = 1:
 	set(v):
 		attack = v
 		update_damage_values()
-
 var defense: int = 1
 var defense_bonus: int = 0
 

@@ -41,6 +41,78 @@
 	"correct_index": 0,
 	"language": "Python"
   },
+{
+	"question_text": "What is the output of this C code?\n\n#include <stdio.h>\n\nint main() {\n    int a = 2, b = 3;\n    printf(\"%d\", a * b);\n    return 0;\n}",
+	"choices": ["5", "6", "23", "Error"],
+	"correct_index": 1,
+	"language": "C"
+  },
+  {
+	"question_text": "Which of the following is a correct way to declare a string in C?",
+	"choices": ["string s = \"hello\";", "char s[] = \"hello\";", "String s = 'hello';", "str s = hello;"],
+	"correct_index": 1,
+	"language": "C"
+  },
+  {
+	"question_text": "Which loop will always execute at least once in C++?",
+	"choices": ["for loop", "while loop", "do-while loop", "foreach loop"],
+	"correct_index": 2,
+	"language": "C++"
+  },
+  {
+	"question_text": "What is the size of an int on most 32-bit systems in C++?",
+	"choices": ["2 bytes", "4 bytes", "8 bytes", "Depends on the compiler"],
+	"correct_index": 1,
+	"language": "C++"
+  },
+  {
+	"question_text": "Which operator is used to concatenate strings in Java?",
+	"choices": ["+", "&", ".", "*"],
+	"correct_index": 0,
+	"language": "Java"
+  },
+  {
+	"question_text": "Which access modifier makes a member accessible only within its own class in Java?",
+	"choices": ["public", "protected", "private", "default"],
+	"correct_index": 2,
+	"language": "Java"
+  },
+  {
+	"question_text": "What is the output of this Python code?\n\nx = [1, 2, 3]\nprint(len(x))",
+	"choices": ["2", "3", "4", "Error"],
+	"correct_index": 1,
+	"language": "Python"
+  },
+  {
+	"question_text": "What does the 'is' keyword do in Python?",
+	"choices": ["Checks for equality", "Assigns a value", "Checks identity", "Checks membership"],
+	"correct_index": 2,
+	"language": "Python"
+  },
+  {
+	"question_text": "What will this JavaScript expression return: typeof undefined?",
+	"choices": ["'null'", "'undefined'", "'object'", "'string'"],
+	"correct_index": 1,
+	"language": "JavaScript"
+  },
+  {
+	"question_text": "What does NaN stand for in JavaScript?",
+	"choices": ["Not a Number", "Name and Number", "No assigned Name", "Null and None"],
+	"correct_index": 0,
+	"language": "JavaScript"
+  },
+  {
+	"question_text": "What is the main scene root node type in Godot 4?",
+	"choices": ["Node", "Node2D", "Control", "SceneRoot"],
+	"correct_index": 0,
+	"language": "Godot"
+  },
+  {
+	"question_text": "In GDScript, what does the keyword 'onready' do?",
+	"choices": ["Initializes variable immediately", "Runs before _init()", "Delays initialization until ready()", "Marks a variable for export"],
+	"correct_index": 2,
+	"language": "GDScript"
+  },
   {
 	"question_text": "What is missing in this Python code?\n\ndef add(a, b)\n    return a + b",
 	"choices": ["Colon after function definition", "Indentation error", "Parentheses missing", "Return statement wrong"],

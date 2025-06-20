@@ -26,7 +26,7 @@ var invulnerble: bool = false
 @onready var state_machein: EnemyStateMachine = $EnemyStateMachine
 
 func _ready() -> void:
-	# 👇 Kiểm tra nếu đã bị giết thì xóa luôn
+	#  Kiểm tra nếu đã bị giết thì xóa luôn
 	if EnemyTracker.is_enemy_defeated(map_name, enemy_id):
 		queue_free()
 		return
@@ -85,7 +85,7 @@ func _take_damaged(hurt_box: HurtBox) -> void:
 	if hp > 0:
 		enemy_dameged.emit(hurt_box)
 	else:
-		# 👇 Lưu trạng thái đã chết
+		#  Lưu trạng thái đã chết
 		EnemyTracker.mark_enemy_defeated(map_name, enemy_id)
 		enemy_destroy.emit(hurt_box)
 		#queue_free()

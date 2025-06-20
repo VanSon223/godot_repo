@@ -60,7 +60,7 @@ tile_map_data = PackedByteArray("AAAIAP7/AAAKAAoAAAAIAP//AAAKAAoAAAAIAAAAAAAKAAo
 update_bounds = false
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("4_1fp1i")]
-position = Vector2(139, 272)
+position = Vector2(7, 161)
 
 [node name="Plant" parent="." instance=ExtResource("5_wa4h8")]
 position = Vector2(11, 64)

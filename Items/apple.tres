@@ -19,7 +19,7 @@ region = Rect2(192, 0, 32, 32)
 [resource]
 script = ExtResource("1_xwhp1")
 name = "Apple"
-description = "Day la qua tao mau do	"
+description = "This is a red apple to heal "
 texture = SubResource("AtlasTexture_uny8u")
 cost = 10
 effects = Array[ExtResource("1_3wksx")]([SubResource("Resource_xq26w")])

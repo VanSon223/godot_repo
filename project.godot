@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="RPG_A&A"
 run/main_scene="uid://5t7fprdld7j"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"

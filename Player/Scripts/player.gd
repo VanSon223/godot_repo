@@ -44,7 +44,7 @@ func _ready():
 	update_damage_values()
 	PlayerManager.player_leveled_up.connect(_on_player_leveled_up)
 	PlayerManager.INVENTORY_DATA.equipment_changed.connect(_on_equipment_changed)
-
+	#invulnerable = true
 # ======= NHẬP INPUT =======
 func _process(_delta):
 	direction = Vector2(
@@ -172,8 +172,3 @@ func increase_defense_permanent(amount: int) -> void:
 	defense += amount
 	emit_signal("stats_changed")
 	print(" Defense buff + ", amount)
-
-# ======= NHẶT ĐỒ (nếu dùng hệ thống ném/đẩy) =======
-#func pickup_item(_t: Throwable) -> void:
-	#state_machine.change_state(lift)
-	#carry.throwable = _t

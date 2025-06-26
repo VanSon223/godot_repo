@@ -1,14 +1,13 @@
 extends CharacterBody2D
 class_name Player
 
-# ======= TÍN HIỆU =======
 signal direction_changed(new_direction: Vector2)
 signal player_damaged(hurt_box: HurtBox)
 signal stats_changed
-# ======= HẰNG SỐ =======
+
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
-# ======= THUỘC TÍNH =======
+
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
 
@@ -26,7 +25,7 @@ var attack: int = 1:
 var defense: int = 1
 var defense_bonus: int = 0
 
-# ======= NODE THAM CHIẾU =======
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 @onready var hit_box: HitBox = $HitBox
@@ -97,6 +96,8 @@ func _take_damage(hurt_box: HurtBox) -> void:
 			dmg = clampi(dmg - defense - defense_bonus, 1, dmg)
 		update_hp(-dmg)
 		player_damaged.emit(hurt_box)
+		print("Damage:", hurt_box.damage, " | Defense:", defense, " | Bonus:", defense_bonus)
+		print("Final Damage:", dmg)
 
 # ======= CẬP NHẬT MÁU =======
 func update_hp(delta: int) -> void:

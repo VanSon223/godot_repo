@@ -1,342 +1,336 @@
 [
   {
-	"question_text": "What is the output of this C code?\n\n#include <stdio.h>\n\nint main() {\n    printf(\"%d\", 5 + 3);\n    return 0;\n}",
-	"choices": ["8", "53", "Error", "0"],
+	"question_text": "Kết quả của đoạn mã C sau là gì?\n\n#include <stdio.h>\n\nint main() {\n    printf(\"%d\", 5 + 3);\n    return 0;\n}",
+	"choices": ["8", "53", "Lỗi", "0"],
 	"correct_index": 0,
 	"language": "C"
   },
   {
-	"question_text": "What is missing in this C code to make it compile?\n\nint main() {\n    printf(\"Hello\");\n}",
-	"choices": ["Include <stdio.h>", "Return type void", "Semicolon after main()", "Nothing"],
+	"question_text": "Đoạn mã C sau cần bổ sung gì để biên dịch được?\n\nint main() {\n    printf(\"Hello\");\n}",
+	"choices": ["Thêm #include <stdio.h>", "Đổi kiểu trả về thành void", "Thêm dấu chấm phẩy sau main()", "Không cần thêm gì cả"],
 	"correct_index": 0,
 	"language": "C"
   },
   {
-	"question_text": "What is the output of this C++ code?\n\n#include <iostream>\n\nint main() {\n    std::cout << 10 / 3;\n    return 0;\n}",
-	"choices": ["3.3333", "3", "4", "Error"],
+	"question_text": "Kết quả của đoạn mã C++ sau là gì?\n\n#include <iostream>\n\nint main() {\n    std::cout << 10 / 3;\n    return 0;\n}",
+	"choices": ["3.3333", "3", "4", "Lỗi"],
 	"correct_index": 1,
 	"language": "C++"
   },
   {
-	"question_text": "What is wrong with this C++ code?\n\n#include <iostream>\n\nint main() {\n    cout << \"Hi\" << endl;\n    return 0;\n}",
-	"choices": ["Missing std::", "Missing #include <iostream>", "Missing semicolon", "Missing main function"],
+	"question_text": "Đoạn mã C++ sau bị lỗi gì?\n\n#include <iostream>\n\nint main() {\n    cout << \"Hi\" << endl;\n    return 0;\n}",
+	"choices": ["Thiếu std::", "Thiếu #include <iostream>", "Thiếu dấu chấm phẩy", "Thiếu hàm main"],
 	"correct_index": 0,
 	"language": "C++"
   },
   {
-	"question_text": "What is the output of this Java code?\n\npublic class Test {\n    public static void main(String[] args) {\n        System.out.println(2 + 2);\n    }\n}",
-	"choices": ["4", "22", "Error", "null"],
+	"question_text": "Kết quả của đoạn mã Java sau là gì?\n\npublic class Test {\n    public static void main(String[] args) {\n        System.out.println(2 + 2);\n    }\n}",
+	"choices": ["4", "22", "Lỗi", "null"],
 	"correct_index": 0,
 	"language": "Java"
   },
   {
-	"question_text": "What error does this Java code have?\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hello\")\n    }\n}",
-	"choices": ["Missing semicolon", "Missing main method", "Wrong print statement", "Class name error"],
+	"question_text": "Đoạn mã Java sau có lỗi gì?\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hello\")\n    }\n}",
+	"choices": ["Thiếu dấu chấm phẩy", "Thiếu hàm main", "Lỗi lệnh in ra", "Sai tên lớp"],
 	"correct_index": 0,
 	"language": "Java"
   },
   {
-	"question_text": "What is the output of this Python code?\n\nfor i in range(3):\n    print(i)",
-	"choices": ["0 1 2", "1 2 3", "0 1 2 3", "Error"],
+	"question_text": "Kết quả của đoạn mã Python sau là gì?\n\nfor i in range(3):\n    print(i)",
+	"choices": ["0 1 2", "1 2 3", "0 1 2 3", "Lỗi"],
 	"correct_index": 0,
 	"language": "Python"
   },
-{
-	"question_text": "What is the output of this C code?\n\n#include <stdio.h>\n\nint main() {\n    int a = 2, b = 3;\n    printf(\"%d\", a * b);\n    return 0;\n}",
-	"choices": ["5", "6", "23", "Error"],
+  {
+	"question_text": "Kết quả của đoạn mã C sau là gì?\n\n#include <stdio.h>\n\nint main() {\n    int a = 2, b = 3;\n    printf(\"%d\", a * b);\n    return 0;\n}",
+	"choices": ["5", "6", "23", "Lỗi"],
 	"correct_index": 1,
 	"language": "C"
   },
   {
-	"question_text": "Which of the following is a correct way to declare a string in C?",
+	"question_text": "Cách nào sau đây là cách khai báo chuỗi đúng trong C?",
 	"choices": ["string s = \"hello\";", "char s[] = \"hello\";", "String s = 'hello';", "str s = hello;"],
 	"correct_index": 1,
 	"language": "C"
   },
   {
-	"question_text": "Which loop will always execute at least once in C++?",
+	"question_text": "Vòng lặp nào trong C++ luôn thực hiện ít nhất một lần?",
 	"choices": ["for loop", "while loop", "do-while loop", "foreach loop"],
 	"correct_index": 2,
 	"language": "C++"
   },
   {
-	"question_text": "What is the size of an int on most 32-bit systems in C++?",
-	"choices": ["2 bytes", "4 bytes", "8 bytes", "Depends on the compiler"],
+	"question_text": "Trong hầu hết hệ thống 32-bit, kiểu int trong C++ có kích thước bao nhiêu?",
+	"choices": ["2 byte", "4 byte", "8 byte", "Tùy thuộc vào trình biên dịch"],
 	"correct_index": 1,
 	"language": "C++"
   },
   {
-	"question_text": "Which operator is used to concatenate strings in Java?",
+	"question_text": "Toán tử nào được dùng để nối chuỗi trong Java?",
 	"choices": ["+", "&", ".", "*"],
 	"correct_index": 0,
 	"language": "Java"
   },
   {
-	"question_text": "Which access modifier makes a member accessible only within its own class in Java?",
+	"question_text": "Bộ định phạm vi nào giúp chỉ có lớp đó mới truy cập được thành viên trong Java?",
 	"choices": ["public", "protected", "private", "default"],
 	"correct_index": 2,
 	"language": "Java"
   },
   {
-	"question_text": "What is the output of this Python code?\n\nx = [1, 2, 3]\nprint(len(x))",
-	"choices": ["2", "3", "4", "Error"],
+	"question_text": "Kết quả của đoạn mã Python sau là gì?\n\nx = [1, 2, 3]\nprint(len(x))",
+	"choices": ["2", "3", "4", "Lỗi"],
 	"correct_index": 1,
 	"language": "Python"
   },
   {
-	"question_text": "What does the 'is' keyword do in Python?",
-	"choices": ["Checks for equality", "Assigns a value", "Checks identity", "Checks membership"],
+	"question_text": "Từ khóa 'is' trong Python có tác dụng gì?",
+	"choices": ["Kiểm tra bằng nhau", "Gán giá trị", "Kiểm tra danh tính", "Kiểm tra thành phần"],
 	"correct_index": 2,
 	"language": "Python"
   },
   {
-	"question_text": "What will this JavaScript expression return: typeof undefined?",
+	"question_text": "Biểu thức sau trong JavaScript trả về giá trị gì: typeof undefined?",
 	"choices": ["'null'", "'undefined'", "'object'", "'string'"],
 	"correct_index": 1,
 	"language": "JavaScript"
   },
   {
-	"question_text": "What does NaN stand for in JavaScript?",
+	"question_text": "NaN trong JavaScript có nghĩa là gì?",
 	"choices": ["Not a Number", "Name and Number", "No assigned Name", "Null and None"],
 	"correct_index": 0,
 	"language": "JavaScript"
   },
   {
-	"question_text": "What is the main scene root node type in Godot 4?",
+	"question_text": "Loại node gốc chính trong cảnh của Godot 4 là gì?",
 	"choices": ["Node", "Node2D", "Control", "SceneRoot"],
 	"correct_index": 0,
 	"language": "Godot"
   },
   {
-	"question_text": "In GDScript, what does the keyword 'onready' do?",
-	"choices": ["Initializes variable immediately", "Runs before _init()", "Delays initialization until ready()", "Marks a variable for export"],
+	"question_text": "Trong GDScript, từ khóa 'onready' dùng để làm gì?",
+	"choices": ["Khởi tạo biến ngay lập tức", "Chạy trước _init()", "Trì hoãn khởi tạo đến khi ready()", "Đánh dấu biến để export"],
 	"correct_index": 2,
 	"language": "GDScript"
   },
   {
-	"question_text": "What is missing in this Python code?\n\ndef add(a, b)\n    return a + b",
-	"choices": ["Colon after function definition", "Indentation error", "Parentheses missing", "Return statement wrong"],
+	"question_text": "Đoạn mã Python sau thiếu gì?\n\ndef add(a, b)\n    return a + b",
+	"choices": ["Thiếu dấu hai chấm sau định nghĩa hàm", "Lỗi thụt đầu dòng", "Thiếu dấu ngoặc đơn", "Sai lệnh return"],
 	"correct_index": 0,
 	"language": "Python"
   },
   {
-	"question_text": "What is the output of this Python snippet?\n\nx = '5'\ny = 2\nprint(x * y)",
+	"question_text": "Kết quả của đoạn mã Python sau là gì?\n\nx = '5'\ny = 2\nprint(x * y)",
 	"choices": ["25", "7", "10", "'55'"],
 	"correct_index": 3,
 	"language": "Python"
   },
   {
-	"question_text": "What does len(\"Godot\") return in Python?",
-	"choices": ["4", "5", "6", "Error"],
+	"question_text": "Hàm len(\"Godot\") trong Python trả về gì?",
+	"choices": ["4", "5", "6", "Lỗi"],
 	"correct_index": 1,
 	"language": "Python"
   },
   {
-	"question_text": "Which keyword is used to define a function in GDScript?",
+	"question_text": "Từ khóa nào được dùng để định nghĩa hàm trong GDScript?",
 	"choices": ["function", "def", "func", "fn"],
 	"correct_index": 2,
 	"language": "GDScript"
   },
   {
-	"question_text": "What is the type of [1, 2, 3] in GDScript?",
+	"question_text": "Kiểu dữ liệu của [1, 2, 3] trong GDScript là gì?",
 	"choices": ["Dictionary", "Array", "List", "Set"],
 	"correct_index": 1,
 	"language": "GDScript"
   },
   {
-	"question_text": "What is the output of print(\"2\" + str(3)) in Python?",
-	"choices": ["5", "23", "\"2 + 3\"", "Error"],
+	"question_text": "Kết quả của đoạn mã print(\"2\" + str(3)) trong Python là gì?",
+	"choices": ["5", "23", "\"2 + 3\"", "Lỗi"],
 	"correct_index": 1,
 	"language": "Python"
   },
   {
-	"question_text": "Which symbol is used for single-line comments in GDScript?",
+	"question_text": "Ký hiệu nào được dùng để viết chú thích một dòng trong GDScript?",
 	"choices": ["//", "#", "--", "/* */"],
 	"correct_index": 1,
 	"language": "GDScript"
   },
   {
-	"question_text": "What is the default value of an uninitialized int in GDScript?",
+	"question_text": "Giá trị mặc định của biến int chưa khởi tạo trong GDScript là gì?",
 	"choices": ["0", "null", "undefined", "error"],
 	"correct_index": 0,
 	"language": "GDScript"
   },
   {
-	"question_text": "Which of these is a valid way to export a variable in GDScript?",
+	"question_text": "Cách nào sau đây là cách export biến hợp lệ trong GDScript?",
 	"choices": ["@export var health", "export int health", "@export int health", "var export health"],
 	"correct_index": 0,
 	"language": "GDScript"
   },
   {
-	"question_text": "How do you check if a variable is null in GDScript?",
+	"question_text": "Làm thế nào để kiểm tra biến có phải là null trong GDScript?",
 	"choices": ["is null", "== null", "= null", "null?"],
 	"correct_index": 1,
 	"language": "GDScript"
   },
   {
-	"question_text": "Which node type is used for playing animations in Godot?",
+	"question_text": "Loại node nào được dùng để phát hoạt ảnh trong Godot?",
 	"choices": ["AnimationTree", "AnimationPlayer", "Animator", "SpriteAnimator"],
 	"correct_index": 1,
 	"language": "Godot"
   },
-
   {
-	"question_text": "What is the correct syntax to declare a variable in JavaScript?",
+	"question_text": "Cú pháp đúng để khai báo biến trong JavaScript là gì?",
 	"choices": ["var x = 10;", "int x = 10;", "x := 10;", "let x == 10;"],
 	"correct_index": 0,
 	"language": "JavaScript"
   },
   {
-	"question_text": "How do you write a comment in JavaScript?",
+	"question_text": "Làm thế nào để viết chú thích trong JavaScript?",
 	"choices": ["// comment", "# comment", "<!-- comment -->", "/* comment */"],
 	"correct_index": 0,
 	"language": "JavaScript"
   },
   {
-	"question_text": "What does the '===' operator mean in JavaScript?",
-	"choices": ["Equality without type coercion", "Assignment", "Equality with type coercion", "Inequality"],
+	"question_text": "Toán tử '===' có ý nghĩa gì trong JavaScript?",
+	"choices": ["So sánh bằng không ép kiểu", "Gán giá trị", "So sánh bằng có ép kiểu", "So sánh khác"],
 	"correct_index": 0,
 	"language": "JavaScript"
   },
   {
-	"question_text": "Which method converts a JSON string to a JavaScript object?",
+	"question_text": "Phương thức nào chuyển chuỗi JSON thành đối tượng JavaScript?",
 	"choices": ["JSON.parse()", "JSON.stringify()", "JSON.convert()", "JSON.toObject()"],
 	"correct_index": 0,
 	"language": "JavaScript"
   },
   {
-	"question_text": "What is the output of console.log(typeof null) in JavaScript?",
+	"question_text": "Kết quả của console.log(typeof null) trong JavaScript là gì?",
 	"choices": ["null", "object", "undefined", "error"],
 	"correct_index": 1,
 	"language": "JavaScript"
   },
-
   {
-	"question_text": "Which of these is NOT a valid data type in Java?",
+	"question_text": "Loại nào sau đây KHÔNG phải là kiểu dữ liệu hợp lệ trong Java?",
 	"choices": ["int", "float", "string", "boolean"],
 	"correct_index": 2,
 	"language": "Java"
   },
   {
-	"question_text": "Which keyword is used to inherit a class in Java?",
+	"question_text": "Từ khóa nào được dùng để kế thừa một lớp trong Java?",
 	"choices": ["extends", "implements", "inherits", "derives"],
 	"correct_index": 0,
 	"language": "Java"
   },
   {
-	"question_text": "What is the output of System.out.println(5 / 2); in Java?",
-	"choices": ["2.5", "2", "3", "Error"],
+	"question_text": "Kết quả của System.out.println(5 / 2); trong Java là gì?",
+	"choices": ["2.5", "2", "3", "Lỗi"],
 	"correct_index": 1,
 	"language": "Java"
   },
   {
-	"question_text": "What is the default value of a boolean variable in Java?",
+	"question_text": "Giá trị mặc định của biến boolean trong Java là gì?",
 	"choices": ["true", "false", "null", "0"],
 	"correct_index": 1,
 	"language": "Java"
   },
-
   {
-	"question_text": "How do you declare a pointer in C++?",
+	"question_text": "Làm sao để khai báo con trỏ trong C++?",
 	"choices": ["int ptr;", "int* ptr;", "ptr int;", "pointer int ptr;"],
 	"correct_index": 1,
 	"language": "C++"
   },
   {
-	"question_text": "Which of these is used for dynamic memory allocation in C++?",
+	"question_text": "Câu lệnh nào dùng để cấp phát bộ nhớ động trong C++?",
 	"choices": ["malloc()", "new", "alloc()", "create()"],
 	"correct_index": 1,
 	"language": "C++"
   },
   {
-	"question_text": "What is the output of cout << 10 / 3 << endl; in C++?",
-	"choices": ["3.3333", "3", "4", "Error"],
+	"question_text": "Kết quả của cout << 10 / 3 << endl; trong C++ là gì?",
+	"choices": ["3.3333", "3", "4", "Lỗi"],
 	"correct_index": 1,
 	"language": "C++"
   },
   {
-	"question_text": "Which keyword is used to create a class in C++?",
+	"question_text": "Từ khóa nào được dùng để tạo một lớp trong C++?",
 	"choices": ["class", "struct", "object", "module"],
 	"correct_index": 0,
 	"language": "C++"
   },
   {
-	"question_text": "What is the correct way to declare the main function in C++?",
+	"question_text": "Cách khai báo hàm main đúng trong C++ là gì?",
 	"choices": ["int main()", "void main()", "main()", "function main()"],
 	"correct_index": 0,
 	"language": "C++"
   },
   {
-	"question_text": "Which statement is used to read input from the keyboard in C++?",
+	"question_text": "Câu lệnh nào được dùng để đọc dữ liệu từ bàn phím trong C++?",
 	"choices": ["scanf()", "cin >>", "input()", "read()"],
 	"correct_index": 1,
 	"language": "C++"
   },
-
   {
-	"question_text": "How do you create an empty list in Python?",
+	"question_text": "Làm cách nào để tạo danh sách rỗng trong Python?",
 	"choices": ["{}", "[]", "()", "list()"],
 	"correct_index": 1,
 	"language": "Python"
   },
   {
-	"question_text": "Which method adds an element to the end of a list in Python?",
+	"question_text": "Phương thức nào thêm phần tử vào cuối danh sách trong Python?",
 	"choices": [".add()", ".append()", ".insert()", ".push()"],
 	"correct_index": 1,
 	"language": "Python"
   },
-
   {
-	"question_text": "Which keyword is used to handle exceptions in Python?",
+	"question_text": "Từ khóa nào được dùng để xử lý ngoại lệ trong Python?",
 	"choices": ["catch", "try", "except", "handle"],
 	"correct_index": 2,
 	"language": "Python"
   },
-
   {
-	"question_text": "Which JavaScript data type represents the absence of any object value?",
+	"question_text": "Kiểu dữ liệu nào trong JavaScript đại diện cho việc không có giá trị đối tượng nào?",
 	"choices": ["null", "undefined", "NaN", "0"],
 	"correct_index": 0,
 	"language": "JavaScript"
   },
   {
-	"question_text": "Which method converts an array to a string in JavaScript?",
+	"question_text": "Phương thức nào chuyển mảng thành chuỗi trong JavaScript?",
 	"choices": [".join()", ".toString()", ".concat()", ".split()"],
 	"correct_index": 1,
 	"language": "JavaScript"
   },
   {
-	"question_text": "What is the correct way to declare a class in Java?",
+	"question_text": "Cách khai báo lớp (class) đúng trong Java là gì?",
 	"choices": ["class MyClass {}", "def MyClass:", "function MyClass()", "module MyClass {}"],
 	"correct_index": 0,
 	"language": "Java"
   },
   {
-	"question_text": "Which operator is used to get the address of a variable in C++?",
+	"question_text": "Toán tử nào dùng để lấy địa chỉ của biến trong C++?",
 	"choices": ["&", "*", "%", "#"],
 	"correct_index": 0,
 	"language": "C++"
   },
   {
-	"question_text": "Which keyword declares a global variable in GDScript?",
+	"question_text": "Từ khóa nào khai báo biến toàn cục trong GDScript?",
 	"choices": ["var", "global", "static", "const"],
 	"correct_index": 0,
 	"language": "GDScript"
   },
   {
-	"question_text": "How do you write an if statement to check if x is greater than 5 in Python?",
+	"question_text": "Cách viết câu lệnh if để kiểm tra x lớn hơn 5 trong Python là gì?",
 	"choices": ["if x > 5:", "if (x > 5)", "if x > 5 then", "if x => 5"],
 	"correct_index": 0,
 	"language": "Python"
   },
   {
-	"question_text": "Which JavaScript method adds an element to the end of an array?",
+	"question_text": "Phương thức nào trong JavaScript thêm phần tử vào cuối mảng?",
 	"choices": [".push()", ".pop()", ".shift()", ".unshift()"],
 	"correct_index": 0,
 	"language": "JavaScript"
   },
   {
-	"question_text": "Which keyword declares a constant variable in Java?",
+	"question_text": "Từ khóa nào được dùng để khai báo biến hằng (constant) trong Java?",
 	"choices": ["final", "const", "static", "immutable"],
 	"correct_index": 0,
 	"language": "Java"
